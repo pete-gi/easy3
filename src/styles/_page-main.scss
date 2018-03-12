@@ -1,6 +1,4 @@
-.page--main {
-    
-}
+.page--main {}
 
 .page-title {
     font-family: $font-secondary;
@@ -17,6 +15,6 @@
         width: 10rem;
         height: 5px;
         background-color: $color-primary;
-        z-index: 0;
+        z-index: -1;
     }
 }
