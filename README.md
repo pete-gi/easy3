@@ -33,7 +33,7 @@
 
 ## Edycja treści
 * Ścieżka do edycji - _/asdf_
-* Dane dostępowe - dev, dev12
+* Dane dostępowe - dev, `haslo`
 
 ### Przewijanie do góry strony
 * Automatycznie włączony i dodany jest przycisk do przewinięcia strony na samą górę. Można mu zmieniać opcje - choć tylko prędkość i odległość, po której się pokaże.
