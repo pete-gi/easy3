@@ -17,6 +17,7 @@
     z-index: 999;
     transition: opacity 0.3s 0s, transform 0.3s 0s, z-index 0s 0s, background-color 0.3s 0s;
     &:hover, &:focus {
+        color: $white;
         background-color: $color-primary-light;
     }
     &.is-hidden {
