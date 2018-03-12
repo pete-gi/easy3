@@ -1,0 +1,102 @@
+/* Alignment styles for images, videos and iframes in editable regions */
+
+/* Center (default) */
+
+[data-editable] iframe,
+[data-editable] image,
+[data-editable] [data-ce-tag=img],
+[data-editable] img,
+[data-editable] video {
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+
+/* Left align */
+
+[data-editable] .align-left {
+    clear: initial;
+    float: left;
+    margin-right: 0.5em;
+}
+
+/* Right align */
+
+[data-editable].align-right {
+    clear: initial;
+    float: right;
+    margin-left: 0.5em;
+}
+
+/* Alignment styles for text in editable regions */
+
+[data-editable] .text-center {
+    text-align: center;
+}
+
+[data-editable] .text-left {
+    text-align: left;
+}
+
+[data-editable] .text-right {
+    text-align: right;
+}
+
+[data-editable] {
+    border: 1px dashed #0071d2;
+}
+
+#sortable {
+    @include section;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    li {
+        position: relative;
+        overflow: hidden;
+        margin: 5px;
+        z-index: 0;
+        .gallery-item {
+            margin: 0;
+            cursor: move;
+        }
+        .remove-item {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            color: #fff;
+            background-color: #a00;
+            border: 0;
+            border-radius: 0;
+            font-size: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+            cursor: pointer;
+            &:hover {
+                background-color: #f00;
+            }
+        }
+    }
+}
+
+.ui-sortable-placeholder {
+    visibility: visible !important;
+    background-color: #aaa;
+}
+
+#sortable-sort,
+#sortable-refresh {
+    padding: 1rem 3rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}

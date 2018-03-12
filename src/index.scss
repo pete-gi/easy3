@@ -1,0 +1,47 @@
+@import '~bootstrap/scss/bootstrap.scss';
+@import '~font-awesome/css/font-awesome.min.css';
+
+@import 'styles/__variables';
+@import 'styles/__mixins';
+
+@import 'styles/_html';
+@import 'styles/_body';
+@import 'styles/_page';
+@import 'styles/_page-header';
+@import 'styles/_page-nav';
+@import 'styles/_page-slider';
+@import 'styles/_page-main';
+@import 'styles/_page-footer';
+@import 'styles/_section';
+@import 'styles/_helpers';
+@import 'styles/_form';
+@import 'styles/_button';
+@import 'styles/_parallax';
+@import 'styles/_card';
+@import 'styles/_google-map';
+@import 'styles/_headings';
+@import 'styles/_misc';
+
+// FANCYBOX GALLERY
+@import 'styles/_gallery';
+
+// CONTENT EDITOR
+@import 'styles/_contenttools';
+
+// SOCIAL ICONS
+@import 'styles/_social-icons';
+
+// SCROLL-TO-TOP BUTTON
+@import 'styles/_scroll-top';
+
+// AOS
+@import '~aos/dist/aos.css';
+
+// POPUP
+// @import 'styles/_popup';
+
+// SLICK CAROUSEL
+// @import 'styles/_carousel';
+
+// MASONRY
+// @import 'styles/_masonry';

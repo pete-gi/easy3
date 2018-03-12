@@ -1,0 +1,64 @@
+@mixin section {
+    float: left;
+    width: 100%;
+    position: relative;
+}
+@mixin placeholder {
+    &::-webkit-input-placeholder {
+        @content;
+    }
+    &::-moz-placeholder {
+        @content;
+    }
+    &:-ms-input-placeholder {
+        @content;
+    }
+    &:-moz-placeholder {
+        @content;
+    }
+}
+
+@mixin gradient($from, $to, $deg) {
+    background: rgba($from, 1);
+    background: linear-gradient($deg, rgba($from,1) 0%,rgba($to,1) 100%);
+}
+
+// Mixin pozwalajacy ustawienie 'color' i 'background' zaznaczonego tekstu
+@mixin selection {
+    &::selection {
+        @content;
+    }
+}
+
+// Mixin na szybkie ustawienie czegos dla konkretnego zakresu szerokosci ekranu
+@mixin lg {
+    @media #{$min-md} {
+        @content;
+    }
+}
+@mixin md {
+    @media #{$max-md} {
+        @media #{$min-sm} {
+            @content;
+        }
+    }
+}
+@mixin sm {
+    @media #{$max-sm} {
+        @media #{$min-xs} {
+            @content;
+        }
+    }
+}
+@mixin xs {
+    @media #{$max-xs} {
+        @media #{$min-xx} {
+            @content;
+        }
+    }
+}
+@mixin xx {
+    @media #{$max-xx} {
+        @content;
+    }
+}

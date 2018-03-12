@@ -1,0 +1,43 @@
+.padd-v {
+    padding: 4rem 0;
+    @media #{$min-xs} {
+        padding: 5rem 0;
+    }
+    @media #{$min-sm} {
+        padding: 6rem 0;
+    }
+    @media #{$min-md} {
+        padding: 7rem 0;
+    }
+    @media #{$min-lg} {
+        padding: 8rem 0;
+    }
+}
+
+.marg-top {
+    margin-top: 4rem;
+}
+.marg-top-2 {
+    margin-top: 8rem;
+}
+.marg-bottom {
+    margin-bottom: 4rem;
+}
+.marg-bottom-2 {
+    margin-bottom: 8rem;
+}
+
+.separator, .sep {
+    @include section;
+    height: 1px;
+    border: 0;
+    padding: 0;
+    margin: 1rem 0;
+    background-color: darken($white, 25%);
+    &--primary {
+        background-color: $color-primary;
+    }
+    &--secondary {
+        background-color: $color-secondary;
+    }
+}

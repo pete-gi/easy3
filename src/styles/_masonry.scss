@@ -1,0 +1,63 @@
+$base-width: 25%;
+$base-height: 20rem;
+$padd-h: 1.5rem;
+$padd-v: 1.5rem;
+.grid-size, .grid-item {
+    width: $base-width * 4;
+    height: $base-height;
+    padding: $padd-v $padd-h
+}
+
+// WIDTH 1-3
+.grid-sizer, .grid-item {
+    @media #{$min-xs} {
+        width: $base-width * 2;
+    }
+    @media #{$min-sm} {
+        width: calc(#{$base-width} * 4 / 3);
+    }
+    @media #{$min-md} {
+        width: $base-width;
+    }
+}
+
+.grid-item--w-2 {
+    @media #{$min-xs} {
+        width: $base-width * 2;
+    }
+    @media #{$min-sm} {
+        width: $base-width * 2;
+    }
+    @media #{$min-md} {
+        width: $base-width * 2;
+    }
+}
+
+.grid-item--w-3 {
+    @media #{$min-xs} {
+        width: $base-width * 2;
+    }
+    @media #{$min-sm} {
+        width: $base-width * 2;
+    }
+    @media #{$min-md} {
+        width: $base-width * 3;
+    }
+}
+
+// HEIGHT 1-3 + fluid
+.grid-item {
+    height: $base-height;
+}
+
+.grid-item--h-2 {
+    height: $base-height * 2;
+}
+
+.grid-item--h-3 {
+    height: $base-height * 3;
+}
+
+.grid-item--h-fluid {
+    height: auto;
+}

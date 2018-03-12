@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="{{@config->multilang ? @lang->current : 'pl'}}">
+
+<head>
+    <base href="{{@BASE}}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{@config->siteName}}</title>
+    <link rel="stylesheet" href="{{@path->css('index.css')}}">
+    <link rel="icon" href="{{@path->img('favicon.ico')}}">
+</head>
+
+<body>
+    <div id="page" class="page page-default">
+
+        <main class="page-main section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <form action="{{@BASE}}/login" method="POST">
+                            <div class="form-group">
+                                <label for="username">Login</label>
+                                <input type="text" class="form-control" id="username" name="username">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Hasło</label>
+                                <input type="password" class="form-control" id="password" name="password">
+                            </div>
+                            <button class="btn btn-primary btn-lg">Zaloguj</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    </div>
+    <script src="{{@path->js('index.js')}}"></script>
+</body>
+
+</html>

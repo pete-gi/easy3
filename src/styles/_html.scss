@@ -1,0 +1,10 @@
+html {
+    background-color: $white;
+    font-size: 10px;
+    @media #{$min-sm} {
+        font-size: 9px;
+    }
+    @media #{$min-lg} {
+        font-size: 10px;
+    }
+}

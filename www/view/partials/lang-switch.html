@@ -1,0 +1,10 @@
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {{@lang->current}}
+    </a>
+    <div class="dropdown-menu">
+        <repeat group="{{@routes}}" key="{{@thelang}}" value="{{@val}}">
+            <a class="dropdown-item {{@thelang == @lang->current ? 'active' : null}}" href="{{@thelang}}">{{@thelang}}</a>
+        </repeat>
+    </div>
+</li>

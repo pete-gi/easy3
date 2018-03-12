@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="{{@lang->current}}">
+
+<head>
+    <base href="{{@BASE}}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Piotr G. / Internet-Media.pl">
+    <meta name="keywords" content="{{@page->seo['keywords']}}">
+    <meta name="description" content="{{@page->seo['description']}}">
+    <meta id="GoogleMapsApiKey" name="GoogleMapsApiKey" content="{{@config->GoogleMapsApiKey}}">
+    <title>{{@page->seo['title'] ? @page->seo['title'] : @page->name}}</title>
+    <check if="{{@config->preloader}}">
+        <link rel="stylesheet" href="{{@path->css('preloader.css')}}">
+    </check>
+    <link rel="stylesheet" href="{{@path->css('index.css')}}">
+    <check if="{{@user->getAuth()}}">
+        <link rel="stylesheet" type="text/css" href="{{@path->css('content-tools.min.css')}}">
+    </check>
+    <link rel="icon" href="{{@path->img('favicon.ico')}}">
+</head>
+
+<body>
+    <div id="page" class="page page-default-side" data-page="{{@page->key}}" data-editmode="{{@user->getAuth ? 'true' : 'false'}}">
+
+        <check if="{{@config->preloader}}">
+            <div id="page-preloader" class="is-active">
+                <include href="{{@path->partial('preloader')}}" />
+            </div>
+        </check>
+
+        <check if="{{@config->siteSocialIcons}}">
+            <include href="{{@path->partial('social-icons')}}" />
+        </check>
+
+        <aside class="page--aside">
+            <include href="{{@path->partial('page-nav/bootstrap4')}}" />
+        </aside>
+
+        <main class="page--main section">
+            <include href="{{@path->partial('page-slider/flexslider')}}" />
+            <include href="{{@path->page(@page->key)}}" />
+            <include href="{{@path->partial('page-footer/default')}}" />
+        </main>
+
+        <button class="btn js-scroll-top">
+            <i class="fa fa-angle-up"></i>
+        </button>
+
+    </div>
+    <check if="{{@config->preloader}}">
+        <script src="{{@path->js('preloader.js')}}"></script>
+    </check>
+    <script src="{{@path->js('index.js')}}"></script>
+    <check if="{{@user->getAuth()}}">
+        <script src="{{@path->js('content-tools.min.js')}}"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="{{@path->js('jquery-ui.min.js')}}"></script>
+        <script src="{{@path->js('editor.js')}}"></script>
+    </check>
+</body>
+
+</html>

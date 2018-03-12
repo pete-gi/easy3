@@ -1,0 +1,36 @@
+<nav class="navbar section navbar-expand-md">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="{{@path->img('logo.png')}}" alt="">
+        </a>
+        <button class="hamburger hamburger--collapse navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#nav-main" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="nav-main">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{@path->url('index')}}">{{@page::get('index')['name']}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{@path->url('o-nas')}}">{{@page::get('o-nas')['name']}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{@path->url('oferta')}}">{{@page::get('oferta')['name']}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{@path->url('galeria')}}">{{@page::get('galeria')['name']}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{@path->url('kontakt')}}">{{@page::get('kontakt')['name']}}</a>
+                </li>
+                <check if="{{@config->multilang}}">
+                    <include href="{{@path->partial('lang-switch')}}" />
+                </check>
+            </ul>
+        </div>
+    </div>
+</nav>

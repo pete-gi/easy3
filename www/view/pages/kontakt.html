@@ -1,0 +1,23 @@
+<section class="section padd-v">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="page-title">
+                    {{@page->name}}
+                </h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-xs-6 col-sm-5 col-md-4">
+                {{@area->set('main')}}
+                <hr class="separator">
+                {{@form->create('contactForm')}}
+            </div>
+            <div class="col-12 col-xs-6 col-sm-7 col-md-8">
+                <gmap id="map1" center="54.344659, 18.582926" zoom="15">
+                    <gmarker coords="54.344659, 18.582926" color="#000" title=""></gmarker>
+                </gmap>
+            </div>
+        </div>
+    </div>
+</section>
