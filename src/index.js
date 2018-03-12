@@ -1,4 +1,5 @@
 import './index.scss';
+import './libs.scss';
 import 'jquery';
 import 'bootstrap';
 

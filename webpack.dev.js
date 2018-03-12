@@ -24,7 +24,10 @@ const config = {
                         }
                     },
                     {
-                        loader: 'sass-loader'
+                        loader: 'sass-loader',
+                        options: {
+                            processCssUrls: false
+                        }
                     },
                 ]
             })
@@ -52,7 +55,8 @@ const config = {
                 loader: 'file-loader',
                 options: {
                     useRelativePath: true,
-                    outputPath: 'img/',
+                    outputPath: './',
+                    publicPath: '../img',
                     name: '[name].[ext]'
                 }
             }]
@@ -62,7 +66,8 @@ const config = {
                 loader: 'file-loader',
                 options: {
                     useRelativePath: true,
-                    outputPath: 'fonts/',
+                    outputPath: './',
+                    publicPath: '../fonts',
                     name: '[name].[ext]'
                 }
             }]
@@ -72,9 +77,6 @@ const config = {
                 loader: 'vue-loader'
             }]
         }]
-    },
-    performance: {
-        hints: false
     },
     resolve: {
         alias: {
