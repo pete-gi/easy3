@@ -5,7 +5,7 @@
 <script>
     export default {
         computed: {
-            tel: function () {
+            email: function () {
                 var str = this.$slots.default[0]['text'];
                 var strClean = str.replace(/([()-\s])/g, '');
                 return {
