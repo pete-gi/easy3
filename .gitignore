@@ -1,3 +1,4 @@
 /node_modules/
 /www/tmp/
-/.vscode/settings.json
+/.vscode/
+/.vscode/ftp-kr.json
