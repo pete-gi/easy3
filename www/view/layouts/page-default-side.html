@@ -14,6 +14,7 @@
     <check if="{{@config->preloader}}">
         <link rel="stylesheet" href="{{@path->css('preloader.css')}}">
     </check>
+    <link rel="stylesheet" href="{{@path->css('libs.css')}}">
     <link rel="stylesheet" href="{{@path->css('index.css')}}">
     <check if="{{@user->getAuth()}}">
         <link rel="stylesheet" type="text/css" href="{{@path->css('content-tools.min.css')}}">
