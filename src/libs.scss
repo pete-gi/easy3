@@ -1,2 +1,26 @@
 @import '~bootstrap/scss/bootstrap.scss';
 @import '~font-awesome/css/font-awesome.min.css';
+
+// FANCYBOX GALLERY
+@import 'styles/_gallery';
+
+// CONTENT EDITOR
+@import 'styles/_contenttools';
+
+// SOCIAL ICONS
+@import 'styles/_social-icons';
+
+// SCROLL-TO-TOP BUTTON
+@import 'styles/_scroll-top';
+
+// AOS
+@import '~aos/dist/aos.css';
+
+// POPUP
+// @import 'styles/_popup';
+
+// SLICK CAROUSEL
+// @import 'styles/_carousel';
+
+// MASONRY
+// @import 'styles/_masonry';
