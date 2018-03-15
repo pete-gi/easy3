@@ -7,10 +7,13 @@ const dist = 'www/view/assets';
 
 const config = {
     mode: 'development',
-    entry: `./${src}/index.js`,
+    entry: {
+        index: `./${src}/index.js`,
+        libs: `./${src}/libs.js`
+    },
     output: {
         path: path.resolve(__dirname, dist),
-        filename: 'js/index.js'
+        filename: 'js/[name].js'
     },
     module: {
         rules: [{
@@ -20,7 +23,8 @@ const config = {
                         loader: 'css-loader',
                         options: {
                             importLoaders: 1,
-                            minimize: true
+                            minimize: true,
+                            url: false
                         }
                     },
                     {
@@ -92,7 +96,7 @@ const config = {
             '$': 'jquery',
             'window.$': 'jquery',
         }),
-        new ExtractTextWebpackPlugin('css/index.css')
+        new ExtractTextWebpackPlugin('css/[name].css')
     ]
 };
 
