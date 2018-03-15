@@ -87,7 +87,7 @@ const config = {
     },
     resolve: {
         alias: {
-            'vue$': 'vue/dist/vue.runtime.min.js'
+            'vue$': 'vue/dist/vue.esm.js'
         }
     },
     plugins: [
