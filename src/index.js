@@ -1,4 +1,6 @@
 import './index.scss';
+import 'jquery';
+import 'bootstrap';
 
 import Flexslider from './scripts/jquery/flexslider';
 import Fancybox from './scripts/jquery/fancybox';
