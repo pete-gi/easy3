@@ -13,6 +13,30 @@
         padding: 8rem 0;
     }
 }
+.padd-v-min {
+    padding: 1rem 0;
+    @media #{$min-xs} {
+        padding: 1.5rem 0;
+    }
+    @media #{$min-md} {
+        padding: 2rem 0;
+    }
+    @media #{$min-lg} {
+        padding: 3rem 0;
+    }
+}
+.padd-v-max {
+    padding: 8rem 0;
+    @media #{$min-xs} {
+        padding: 10rem 0;
+    }
+    @media #{$min-md} {
+        padding: 12rem 0;
+    }
+    @media #{$min-lg} {
+        padding: 14rem 0;
+    }
+}
 
 .marg-top {
     margin-top: 4rem;
@@ -47,4 +71,34 @@
 }
 .font-secondary {
     font-family: $font-secondary;
+}
+
+.bg-white {
+    color: $color-text;
+    background-color: $white;
+}
+.bg-black {
+    color: invert($color-text);
+    background-color: $black;
+}
+.bg-primary {
+    background-color: $color-primary;
+}
+.bg-secondary {
+    background-color: $color-secondary;
+}
+.bg-triary {
+    background-color: $color-triary;
+}
+
+.overflow {
+    &-hidden {
+        overflow: hidden;
+    }
+    &-x-hidden {
+        overflow-x: hidden;
+    }
+    &-y-hidden {
+        overflow-y: hidden;
+    }
 }

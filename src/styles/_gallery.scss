@@ -4,11 +4,25 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
+    margin: 0 -0.5rem 3rem;
     [data-fancybox], .gallery-item {
         position: relative;
         overflow: hidden;
-        margin: 5px;
+        margin: 0.5rem;
         z-index: 0;
+        width: calc(100% / 2 - 1rem);
+        @media #{$min-xs} {
+            width: calc(100% / 3 - 1rem);
+        }
+        @media #{$min-sm} {
+            width: calc(100% / 4 - 1rem);
+        }
+        @media #{$min-md} {
+            width: calc(100% / 5 - 1rem);
+        }
+        @media #{$min-lg} {
+            width: calc(100% / 6 - 1rem);
+        }
         &:after {
             content: '\f002';
             position: absolute;
