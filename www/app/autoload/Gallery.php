@@ -45,6 +45,7 @@ class Gallery {
         $imagePath = $path->galleryFile($name . '/vlb_images1');
 
         $html = '';
+        $arr = [];
         if ($isAuth) {
             $html .= '<ul id="sortable" data-name="'. $name . '">';
         }
@@ -52,11 +53,17 @@ class Gallery {
         foreach($this->$name as $file) {
             $filename = pathinfo($path->gallery($imagePath.'/'.$file), PATHINFO_FILENAME);
             if ($isAuth) {
-                $html .= '<li id="'.$file.'">';
+                $html .= '<li id="'.$file.'" class="gallery-item">';
                 $html .= "<button class='remove-item' data-href='".$path->base()."/delete' data-item='$file'><i class='fa fa-close'></i></button>";
-                $html .= "<img class='gallery-item' src='$thumbPath/$file' alt='' title='$filename'>";
+                $html .= "<img src='$thumbPath/$file' alt='' title='$filename'>";
                 $html .= '</li>';
             } else {
+                $arr[] = [
+                    'imagepath' => "$imagePath/$file",
+                    'thumbpath' => "$thumbPath/$file",
+                    'galleryname' => $name,
+                    'filename' => $filename
+                ];
                 $html .= "<a href='$imagePath/$file' class='gallery-item' data-fancybox='$name'><img src='$thumbPath/$file' alt='' title='$filename'></a>";
             }
         }
@@ -65,7 +72,11 @@ class Gallery {
             $html .= '<button id="sortable-sort" data-href="' . $path->base() . '/sort" class="btn btn-primary">Sort</button>';
             $html .= '<button id="sortable-refresh" data-href="' . $path->base() . '/refresh" class="btn btn-warning">Refresh</button>';
         }
-        return $html;
+        if ($isAuth) {
+            return $html;
+        } else {
+            echo json_encode($arr);
+        }
     }
 
     function listFiles($galleryName) {

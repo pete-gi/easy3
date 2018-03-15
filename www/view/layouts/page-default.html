@@ -24,7 +24,7 @@
 </head>
 
 <body>
-    <div id="page" class="page page-default" data-page="{{@page->key}}" data-editmode="{{@user->getAuth ? 'true' : 'false'}}">
+    <div id="page" class="page page-default" data-page="{{@page->key}}" data-editmode="{{@user->getAuth() ? 'true' : 'false'}}">
 
         <check if="{{@config->preloader}}">
             <div id="page-preloader" class="is-active">
