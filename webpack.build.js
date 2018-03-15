@@ -8,10 +8,13 @@ const dist = 'www/view/assets';
 
 const config = {
     mode: 'production',
-    entry: `./${src}/index.js`,
+    entry: {
+        index: `./${src}/index.js`,
+        libs: `./${src}/libs.js`
+    },
     output: {
         path: path.resolve(__dirname, dist),
-        filename: 'js/index.js'
+        filename: 'js/[name].js'
     },
     module: {
         rules: [{
@@ -96,7 +99,7 @@ const config = {
             '$': 'jquery',
             'window.$': 'jquery',
         }),
-        new ExtractTextWebpackPlugin('css/index.css'),
+        new ExtractTextWebpackPlugin('css/[name].css'),
         new UglifyJSPlugin({
             uglifyOptions: {
                 mangle: false,
