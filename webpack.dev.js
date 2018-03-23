@@ -17,33 +17,23 @@ const config = {
     },
     module: {
         rules: [{
-            test: /\.(scss|sass)$/,
+            test: /\.(scss|sass|css)$/,
             use: ExtractTextWebpackPlugin.extract({
                 use: [{
-                        loader: 'css-loader',
-                        options: {
-                            importLoaders: 1,
-                            minimize: true,
-                            url: false
-                        }
-                    },
-                    {
-                        loader: 'sass-loader',
-                        options: {
-                            processCssUrls: false
-                        }
-                    },
-                ]
+                    loader: 'css-loader',
+                    options: {
+                        importLoaders: 1,
+                        minimize: false,
+                        url: false
+                    }
+                }, {
+                    loader: 'sass-loader',
+                    options: {
+                        processCssUrls: false,
+                        includePaths: [path.resolve(__dirname, src), path.resolve(__dirname, `${src}/styles`)]
+                    }
+                }]
             })
-        }, {
-            test: /\.css$/,
-            use: [{
-                    loader: 'url-loader'
-                },
-                {
-                    loader: 'css-loader'
-                }
-            ]
         }, {
             test: /\.js$/,
             exclude: /node_modules/,

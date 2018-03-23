@@ -4,7 +4,7 @@
             <slot></slot>
         </template>
         <template v-else>
-            <a v-for="img in data" :key="img.filename" :href="img.imagepath" class="gallery-item" :data-fancybox="img.name">
+            <a v-for="img in data" :key="img.filename" :href="img.imagepath" class="gallery-item" :data-fancybox="img.galleryname">
                 <img :src="img.thumbpath" alt="" :title="img.filename">
             </a>
         </template>

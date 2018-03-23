@@ -1,5 +1,4 @@
-@import '~bootstrap/scss/bootstrap.scss';
-@import '~font-awesome/css/font-awesome.min.css';
+@import '~bootstrap/scss/bootstrap';
 
 @import 'styles/__variables';
 @import 'styles/__mixins';
@@ -17,7 +16,7 @@
 @import 'styles/_scroll-top';
 
 // AOS
-@import '~aos/dist/aos.css';
+// @import '~aos/dist/aos.css';
 
 // POPUP
 // @import 'styles/_popup';

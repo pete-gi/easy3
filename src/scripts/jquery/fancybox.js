@@ -2,6 +2,7 @@ import '@fancyapps/fancybox/dist/jquery.fancybox.min';
 class Fancybox {
     constructor(selector) {
         this.selector = selector;
+        this.thumbnails = false;
     }
 
     init() {
@@ -250,7 +251,7 @@ class Fancybox {
             },
 
             thumbs: {
-                autoStart: false, // Display thumbnails on opening
+                autoStart: this.thumbnails, // Display thumbnails on opening
                 hideOnClose: true, // Hide thumbnail grid when closing animation starts
                 parentEl: '.fancybox-container', // Container is injected into this element
                 axis: 'y' // Vertical (y) or horizontal (x) scrolling

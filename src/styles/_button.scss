@@ -1,4 +1,4 @@
-.btn, .button {
+.btn, .button, a.btn:not([href]):not([tabindex]), a.button:not([href]):not([tabindex]) {
 	font-family: $font-secondary;
     font-size: 1.5rem;
 	line-height: 1;

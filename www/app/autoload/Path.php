@@ -9,9 +9,9 @@ class Path {
     function url($page) {
         $lang = new Lang();
         if ($lang->multilang) {
-            return \Base::instance()->get('BASE')  . '/' . $lang->current . Page::get($page)['url'];
+            return \Base::instance()->get('BASE') . $lang->current . Page::get($page)['url'];
         } else {
-            return \Base::instance()->get('BASE')  . Page::get($page)['url'];
+            return \Base::instance()->get('BASE') . Page::get($page)['url'];
         }
         
     }
@@ -19,54 +19,54 @@ class Path {
     function href($page) {
         $lang = new Lang();
         if ($lang->multilang) {
-            return \Base::instance()->get('BASE')  . '/' . $lang->current . Page::get($page)['url'];
+            return \Base::instance()->get('BASE') . $lang->current . Page::get($page)['url'];
         } else {
-            return \Base::instance()->get('BASE')  . Page::get($page)['url'];
+            return \Base::instance()->get('BASE') . Page::get($page)['url'];
         }
     }
 
     function img($file) {
-        return \Base::instance()->get('BASE')  . '/' . \Base::instance()->get('UI')  . "assets/img/$file";
+        return \Base::instance()->get('BASE')  . '/' . 'view/'  . "assets/img/$file";
     }
 
     function css($file) {
-        return \Base::instance()->get('BASE')  . '/' . \Base::instance()->get('UI')  . "assets/css/$file";
+        return \Base::instance()->get('BASE')  . '/' . 'view/'  . "assets/css/$file";
     }
 
     function js($file) {
-        return \Base::instance()->get('BASE')  . '/' . \Base::instance()->get('UI')  . "assets/js/$file";
+        return \Base::instance()->get('BASE')  . '/' . 'view/'  . "assets/js/$file";
     }
 
     function file($file) {
-        return \Base::instance()->get('BASE')  . '/' . \Base::instance()->get('UI')  . "assets/files/$file";
+        return \Base::instance()->get('BASE')  . '/' . 'view/'  . "assets/files/$file";
     }
 
     function gallery($dir = null) {
-        return \Base::instance()->get('UI')  . "assets/gallery/$dir";
+        return 'view/'  . "assets/gallery/$dir";
     }
 
     function galleryFile($dir = null) {
-        return \Base::instance()->get('BASE')  . '/' . \Base::instance()->get('UI')  . "assets/gallery/$dir";
+        return \Base::instance()->get('BASE')  . '/' . 'view/'  . "assets/gallery/$dir";
     }
 
     function page($name) {
-        return "pages/$name.html";
+        return "view/pages/$name.html";
     }
 
     function realpagepath($name) {
-        return \Base::instance()->get('BASE')  . '/' . \Base::instance()->get('UI')  . "pages/$name.html";
+        return \Base::instance()->get('BASE')  . '/' . 'view/'  . "pages/$name.html";
     }
 
     function partial($name) {
-        return "partials/$name.html";
+        return "view/partials/$name.html";
     }
 
     function layout($name) {
-        return "layouts/$name";
+        return "view/layouts/$name";
     }
 
     function form($name) {
-        return \Base::instance()->get('UI')  . "forms/$name.php";
+        return "view/forms/$name.php";
     }
 
 }
