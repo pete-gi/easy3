@@ -1,6 +1,5 @@
 import './index.scss';
 import 'jquery';
-import 'bootstrap';
 
 import Flexslider from './scripts/jquery/flexslider';
 import Fancybox from './scripts/jquery/fancybox';
@@ -21,6 +20,7 @@ $(window).on('load', function() {
     slider.init();
 
     let gallery = new Fancybox('[data-fancybox]');
+    // gallery.thumbnails = true;
     gallery.init();
 
     let lightboxItem = new Fancybox('.lightbox');

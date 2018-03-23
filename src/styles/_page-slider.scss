@@ -1,13 +1,11 @@
 @import 'slider/flexslider';
 .page--slider {
     z-index: 10;
-    @at-root .page-default:not([data-page="index"]) & {
-        max-height: 30rem;
+    @at-root #page:not([data-page="index"]) & {
+        max-height: 50rem;
         overflow: hidden;
-    }
-    @at-root .page-default-side:not([data-page="index"]) & {
-        max-height: 20rem;
-        overflow: hidden;
+        display: flex;
+        align-items: center;
     }
 }
 

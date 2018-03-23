@@ -18,35 +18,26 @@ const config = {
     },
     module: {
         rules: [{
-            test: /\.(scss|sass)$/,
+            test: /\.(scss|sass|css)$/,
             use: ExtractTextWebpackPlugin.extract({
                 fallback: 'style-loader',
                 use: [{
-                        loader: 'css-loader',
-                        options: {
-                            importLoaders: 2,
-                            minimize: true,
-                            url: false
-                        }
-                    }, {
-                        loader: 'postcss-loader'
-                    }, {
-                        loader: 'sass-loader',
-                        options: {
-                            processCssUrls: false
-                        }
+                    loader: 'css-loader',
+                    options: {
+                        importLoaders: 2,
+                        minimize: true,
+                        url: false
                     }
-                ]
-            })
-        }, {
-            test: /\.css$/,
-            use: [{
-                    loader: 'url-loader'
                 }, {
-                    loader: 'css-loader'
-                }
-            ]
-
+                    loader: 'postcss-loader'
+                }, {
+                    loader: 'sass-loader',
+                    options: {
+                        processCssUrls: false,
+                        includePaths: [path.resolve(__dirname, src), path.resolve(__dirname, `${src}/styles`)]
+                    }
+                }]
+            })
         }, {
             test: /\.js$/,
             exclude: /node_modules/,
