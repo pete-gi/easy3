@@ -20,6 +20,20 @@
         <link rel="stylesheet" type="text/css" href="{{@path->css('content-tools.min.css')}}">
     </check>
     <link rel="icon" href="{{@path->img('favicon.ico')}}">
+
+    <check if="{{@config->preloader}}">
+        <script defer src="{{@path->js('preloader.js')}}"></script>
+    </check>
+    <script defer src="{{@path->js('index.js')}}"></script>
+    <check if="{{@user->getAuth()}}">
+        <script defer src="{{@path->js('content-tools.min.js')}}"></script>
+        <script defer src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script defer src="{{@path->js('jquery-ui.min.js')}}"></script>
+        <script defer src="{{@path->js('editor.js')}}"></script>
+    </check>
+    <check if="{{@config->recaptcha}}">
+        <script defer src='https://www.google.com/recaptcha/api.js'></script>
+    </check>
 </head>
 
 <body>
@@ -49,19 +63,6 @@
         <include href="{{@path->partial('page-footer/default')}}" />
 
     </div>
-    <check if="{{@config->preloader}}">
-        <script src="{{@path->js('preloader.js')}}"></script>
-    </check>
-    <script src="{{@path->js('index.js')}}"></script>
-    <check if="{{@user->getAuth()}}">
-        <script src="{{@path->js('content-tools.min.js')}}"></script>
-        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-        <script src="{{@path->js('jquery-ui.min.js')}}"></script>
-        <script src="{{@path->js('editor.js')}}"></script>
-    </check>
-    <check if="{{@config->recaptcha}}">
-        <script src='https://www.google.com/recaptcha/api.js'></script>
-    </check>
 </body>
 
 </html>
