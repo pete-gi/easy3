@@ -7,6 +7,7 @@ import Fancybox from './scripts/jquery/fancybox';
 // import MasonryGrid from './scripts/jquery/masonry';
 // import AOSAnimate from './scripts/jquery/aos';
 
+import ScrollTo from './scripts/jquery/scrollTo';
 import ScrollTop from './scripts/jquery/scrollToTop';
 // import Accordion from './scripts/jquery/accordion';
 
@@ -41,6 +42,9 @@ $(window).on('load', function() {
     // scrollTop.speed = 1000;
     // scrollTop.offsetToggle = 5;
     scrollTop.init();
+
+    let scrollTo = new ScrollTo('.js-scroll');
+    scrollTo.init();
 
     // let accordion = new Accordion('.accordion');
     // // accordion.resetOnToggle = true;
