@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueResource from 'vue-resource';
+import cookies from './vue-components/cookies.vue';
 import gmap from './vue-components/gmap.vue';
 import gmarker from './vue-components/gmarker.vue';
 import parallax from './vue-components/parallax.vue';
@@ -30,6 +31,7 @@ let vue = new Vue({
         }
     },
     components: {
+        cookies,
         gmap,
         gmarker,
         parallax,
