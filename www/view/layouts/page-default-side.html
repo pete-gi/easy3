@@ -37,7 +37,7 @@
 </head>
 
 <body>
-    <div id="page" class="page page-default-side" data-page="{{@page->key}}" data-editmode="{{@user->getAuth !== false ? 'true' : 'false'}}">
+    <div id="page" class="page page-default-side" data-page="{{@page->key}}" data-editmode="{{@user->getAuth !== false ? 'true' : 'false'}}" @click="rodo.info = false">
 
         <check if="{{@config->preloader}}">
             <div id="page-preloader" class="is-active">
