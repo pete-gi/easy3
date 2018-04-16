@@ -1,17 +1,33 @@
 <!DOCTYPE html>
-<html lang="{{@config->multilang ? @lang->current : 'pl'}}">
+<html lang="<?php echo substr(\Base::instance()->get('LANGUAGE'), 0, strpos(\Base::instance()->get('LANGUAGE'), '-')) ?>">
 
 <head>
-    <base href="{{@BASE}}">
+    <base href="<?php echo \Base::instance()->get('BASE') ?>">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{@config->siteName}}</title>
-    <link rel="stylesheet" href="{{@path->css('index.css')}}">
-    <link rel="icon" href="{{@path->img('favicon.ico')}}">
+    <title><?php echo \Base::instance()->config('config/config.ini')['config']['siteName'] ?></title>
+    <link rel="stylesheet" href="<?php echo $path->css('libs.css') ?>">
+    <link rel="stylesheet" href="<?php echo $path->css('index.css') ?>">
+    <link rel="icon" href="<?php echo $path->img('favicon.ico') ?>">
 </head>
 
 <body>
-    <div id="page" class="page page-default" data-page="{{@page->key}}">
+    <div id="page" class="page page-default">
 
+        <nav class="page--nav navbar navbar-expand-md">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="<?php echo $path->img('logo.png') ?>" alt="">
+                </a>
+        
+                <div class="collapse navbar-collapse" id="nav-main">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo $path->url('index') ?>"><?php echo page::get('index')['name'] ?></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
         <main class="page--main section">

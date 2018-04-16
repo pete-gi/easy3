@@ -35,8 +35,16 @@ class Page {
             $f3->set('page', $this);
             echo \Template::instance()->render($layoutpath);
         } else {
-            $f3->error(404);
+            $code = $f3->get('ERROR.code');
+            self::error($code);
         }
+    }
+
+    static function error($code) {
+        $path = new Path();
+        $errorPath = $path->error('view');
+        $errorFile = include($errorPath);
+        echo \Template::instance()->resolve($errorFile);
     }
 
     static function get($page) {

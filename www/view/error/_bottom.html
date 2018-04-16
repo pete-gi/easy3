@@ -1,7 +1,25 @@
 </main>
 
+<footer class="page--footer section">
+    <section class="section footer-copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="text-center text-md-left">
+                        Copyright &copy; 2018 by <?php echo \Base::instance()->config('config/config.ini')['config']['siteName'] ?>. <?php echo \Base::instance()->get('t.allrightsreserved') ?>.
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <p class="text-center text-md-right">
+                        <?php echo \Base::instance()->get('t.designandimplementation') ?>: <a href="http://internet-media.pl" target="_blank">Internet Media Polska</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</footer>
+
 </div>
-<script src="{{@path->js('index.js')}}"></script>
 </body>
 
 </html>
