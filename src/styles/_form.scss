@@ -2,7 +2,7 @@
     @include section;
     z-index: 0;
     .form-group {
-
+        position: relative;
         label {
 
         }
@@ -57,4 +57,45 @@
             transition: opacity 0.3s 0s, font-size 0.2s 0.2s, z-index 0s 0s;
         }
     }
+}
+
+.rodo-tooltip {
+    position: absolute;
+    left: 0;
+    bottom: calc(100% + 10px);
+    width: 100%;
+    height: auto;
+    color: $white;
+    background-color: rgba($black, 0.85);
+    padding: 0.5rem 1rem;
+    margin: 0;
+    border-radius: 0.5rem;
+    font-size: 12px;
+    line-height: 1.3;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s 0s, z-index 0s 0.3s;
+    &.is-visible {
+        opacity: 1;
+        z-index: 5;
+        transition: opacity 0.3s 0s, z-index 0s 0s;
+    }
+}
+.rodo-popup {
+    background: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-bottom: 1px solid;
+    border-color: inherit;
+    color: inherit;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.rodo-warning {
+    background-color: #d00;
+    color: $white;
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+    line-height: 1.3;
 }

@@ -65,6 +65,10 @@ class Path {
         return "view/layouts/$name";
     }
 
+    function error($name) {
+        return "view/error/$name.html";
+    }
+
     function form($name) {
         return "view/forms/$name.php";
     }

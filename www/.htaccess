@@ -1,4 +1,5 @@
 RewriteEngine On
+
 # RewriteBase /
 RewriteRule ^(tmp)\/|\.ini$ - [R=404]
 
@@ -7,21 +8,6 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule .* index.php [L,QSA]
 RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization},L]
-
-#Custom 400 errors
-ErrorDocument 400 view/error/400.html
-
-#Custom 401 errors
-ErrorDocument 401 view/error/401.html
-
-#Custom 403 errors
-ErrorDocument 403 view/error/403.html
-
-#Custom 404 errors
-ErrorDocument 404 view/error/404.html
-
-#Custom 500 errors
-ErrorDocument 500 view/error/500.html
 
 #Prevent viewing of .htaccess file
 <Files .htaccess>

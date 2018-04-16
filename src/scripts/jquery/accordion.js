@@ -27,6 +27,14 @@ class Accordion {
                 self.$content.slideUp();
             });
         }
+        if (location.hash && $(location.hash)) {
+            $(function() {
+                $(location.hash + ' > .accordion-content').slideDown();
+                $('html, body').animate({
+                    scrollTop: $(location.hash).offset().top
+                }, 500);
+            });
+        }
     }
 }
 

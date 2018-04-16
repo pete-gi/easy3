@@ -36,6 +36,14 @@ return [
             'rows' => 5,
             'required' => true,
             'placeholder' => false
+        ],
+        [
+            'type' => 'checkbox',
+            'name' => 'zgoda-dane-osobowe',
+            'options' => [
+                \Template::instance()->resolve($f3->get('t.rodo.info'))
+            ],
+            'rodo' => \Template::instance()->resolve($f3->get('t.rodo.tooltip'))
         ]
     ],
     'options' => [

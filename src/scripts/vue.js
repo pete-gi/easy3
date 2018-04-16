@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueResource from 'vue-resource';
+import cookies from './vue-components/cookies.vue';
 import gmap from './vue-components/gmap.vue';
 import gmarker from './vue-components/gmarker.vue';
 import parallax from './vue-components/parallax.vue';
@@ -13,23 +14,46 @@ import gallery from './vue-components/gallery-loader.vue';
 Vue.use(VueResource)
 let vue = new Vue({
     el: '#page',
+    data: {
+        rodo: {
+            checkbox: null,
+            info: false,
+            warning: false
+        }
+    },
     methods: {
         sendMail(id) {
-            let form = document.getElementById(id);
-            let formData = new FormData(form);
-        
-            form.classList.add('form-sending');
-        
-            Vue.http.post(form.action, formData).then(res => {
-                form.classList.remove('form-sending');
-                form.classList.add('form-success');
-            }, res => {
-                form.classList.remove('form-sending');
-                form.classList.add('form-failure');
-            });
+            if (this.rodo.checkbox === false || this.rodo.checkbox === null) {
+                this.rodo.warning = true;
+            } else if (this.rodo.checkbox === true) {
+                this.rodo.warning = false;
+                let form = document.getElementById(id);
+                let formData = new FormData(form);
+
+                form.classList.add('form-sending');
+
+                Vue.http.post(form.action, formData).then(res => {
+                    form.classList.remove('form-sending');
+                    form.classList.add('form-success');
+                }, res => {
+                    form.classList.remove('form-sending');
+                    form.classList.add('form-failure');
+                });
+            }
+
+        },
+        rodoPopup() {
+            this.rodo.checkbox = true;
+            this.rodo.warning = false;
+        },
+        checkRodoWarning() {
+            if (this.rodo.checkbox === true) {
+                this.rodo.warning = false;
+            }
         }
     },
     components: {
+        cookies,
         gmap,
         gmarker,
         parallax,

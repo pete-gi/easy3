@@ -15,6 +15,11 @@ foreach($routesData[$lang->current] as $key => $route) {
     $f3->route("$method @$name: $url", "$callback");
 }
 
+$f3->set('ONERROR', function($f3) {
+    $code = $f3->get('ERROR.code');
+    Page::error($code);
+});
+
 $f3->set('routes', $routesData);
 $f3->set('config', new Config($config));
 $f3->set('path', new Path);

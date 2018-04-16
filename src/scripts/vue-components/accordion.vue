@@ -1,5 +1,5 @@
 <template>
-    <div class="accordion">
+    <div class="accordion" :id="id">
         <button class="btn">{{title}}</button>
         <div class="accordion-content">
             <slot></slot>
@@ -10,7 +10,8 @@
 <script>
     export default {
         props: [
-            'title'
+            'title',
+            'id'
         ]
     }
 </script>
