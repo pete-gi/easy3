@@ -1,5 +1,6 @@
 import './index.scss';
 import 'jquery';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 import Flexslider from './scripts/jquery/flexslider';
 import Fancybox from './scripts/jquery/fancybox';
