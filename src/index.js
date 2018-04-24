@@ -41,7 +41,7 @@ $(window).on('load', function() {
 
     let scrollTop = new ScrollTop('.js-scroll-top');
     // scrollTop.speed = 1000;
-    // scrollTop.offsetToggle = 5;
+    scrollTop.offsetToggle = 5;
     scrollTop.init();
 
     let scrollTo = new ScrollTo('.js-scroll');
