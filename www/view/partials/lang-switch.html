@@ -4,7 +4,7 @@
     </a>
     <div class="dropdown-menu">
         <repeat group="{{@routes}}" key="{{@thelang}}" value="{{@val}}">
-            <a class="dropdown-item {{@thelang == @lang->current ? 'active' : null}}" href="{{@thelang}}">{{@thelang}}</a>
+            <a class="dropdown-item {{@thelang == @lang->current ? 'active' : null}}" href="{{@BASE.'/'.@thelang}}">{{@thelang}}</a>
         </repeat>
     </div>
 </li>

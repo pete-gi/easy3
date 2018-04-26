@@ -11,7 +11,6 @@ class Lang {
         $config = new Config($conf);
         if ($config->multilang) {
             $this->multilang = true;
-            
         } else {
             $this->multilang = false;
         }
@@ -24,6 +23,12 @@ class Lang {
         $hyphenPosition = strpos($locale, '-');
         $position = $comaPosition > $hyphenPosition ? $hyphenPosition : $comaPosition;
         $lang = substr($locale, 0, $position);
+        
+        $routesData = include('config/routing.php');
+        if (!$routesData[$lang]) {
+            $lang = \Base::instance()->get('FALLBACK');
+        }
+
         return $lang;
     }
 
