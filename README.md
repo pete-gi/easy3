@@ -60,6 +60,11 @@
 ### AOS
 * AOS'a można włączyć w index.js
 
+### Custom Scrollbar
+* Aby włączyć Malihu Custom Scrollbar, należy odkomentować importy w _index.js_ i _libs.scss_
+* Należy również zainicjować klasę CustomScrollbar w pliku _index.js_ (wystarczy odkomentować)
+* Kolory i szerokość paska przewijania można zmienić w odpowiednim pliku scss
+
 ### Preloader
 * Wyświetlanie preloadera jest uwarunkowane wartością w pliku _config.ini_
 * Preloader posiada ODRĘBNE pliki *.css i *.js w katalogu _web/assets_

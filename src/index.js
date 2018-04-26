@@ -1,7 +1,6 @@
 import './index.scss';
-import 'jquery';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
 
+// import CustomScrollbar from './scripts/jquery/customScrollbar';
 import Flexslider from './scripts/jquery/flexslider';
 import Fancybox from './scripts/jquery/fancybox';
 // import Slick from './scripts/jquery/slick';
@@ -15,6 +14,10 @@ import ScrollTop from './scripts/jquery/scrollToTop';
 import vue from './scripts/vue';
 
 $(window).on('load', function() {
+    // let scrollbar = new CustomScrollbar('#page');
+    // // scrollbar.axis = 'y';
+    // scrollbar.init();
+
     let slider = new Flexslider('.flexslider');
     slider.controls = false;
     slider.directions = false;
