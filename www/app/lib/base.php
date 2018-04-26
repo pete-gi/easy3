@@ -132,7 +132,7 @@ final class Base extends Prefab implements ArrayAccess {
 		//! Mutex locks
 		$locks=[],
 		//! Default fallback language
-		$fallback='en';
+		$fallback='pl';
 
 	/**
 	*	Sync PHP global with corresponding hive key
