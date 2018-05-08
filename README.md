@@ -51,6 +51,7 @@
 ### Masonry
 * Za pomocą tagu `<masonry></masonry>` można dodać kontener Masonry. Kafelki dodaje się poprzez `<grid-item></grid-item>`.
 * Kafelek przyjmuje parametry _width_ i _height_ odpowiadające za ich rozmiar. *UWAGA! Rozmiar podaje się jako mnożnik, nie konkretna długość!*
+* Kafelek przyjmuje parametr _classname_ odpowiadające za dodatkowe klasy html dla niego.
 * Wewnątrz kafelka należy wprowadzić treść
 
 ### Popup

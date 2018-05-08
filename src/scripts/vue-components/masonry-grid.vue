@@ -1,5 +1,5 @@
 <template>
-    <div class="grid-item" :class="size">
+    <div class="grid-item" :class="[size, classname]">
         <slot></slot>
     </div>
 </template>
@@ -9,7 +9,8 @@
         name: 'grid-item',
         props: [
             'width',
-            'height'
+            'height',
+            'classname'
         ],
         computed: {
             size() {
