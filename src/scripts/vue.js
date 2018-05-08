@@ -9,7 +9,7 @@ import email from './vue-components/email.vue';
 import gallery from './vue-components/gallery-loader.vue';
 // import accordion from './vue-components/accordion.vue';
 // import masonry from './vue-components/masonry.vue';
-// import grid from './vue-components/masonry-grid.vue';
+// import gridItem from './vue-components/masonry-grid.vue';
 
 Vue.use(VueResource)
 let vue = new Vue({
@@ -62,7 +62,7 @@ let vue = new Vue({
         gallery,
         // accordion,
         // masonry,
-        // grid
+        // gridItem
     }
 })
 

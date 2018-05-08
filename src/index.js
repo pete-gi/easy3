@@ -1,3 +1,5 @@
+import 'bootstrap';
+
 import './index.scss';
 
 // import CustomScrollbar from './scripts/jquery/customScrollbar';
@@ -15,6 +17,7 @@ import vue from './scripts/vue';
 
 $(window).on('load', function() {
     // let scrollbar = new CustomScrollbar('#page');
+    // scrollbar.step = 200;
     // // scrollbar.axis = 'y';
     // scrollbar.init();
 

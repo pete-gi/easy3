@@ -4,11 +4,16 @@ class CustomScrollbar {
         this.selector = selector;
         this.axis = 'y';
         this.theme = 'light';
+        this.step = 150;
     }
     init() {
         $(this.selector).mCustomScrollbar({
             axis: this.axis,
-            theme: this.theme
+            theme: this.theme,
+			scrollInertia: (this.step * 3),
+            mouseWheel: {
+                scrollAmount: this.step
+            }
         });
     }
 }

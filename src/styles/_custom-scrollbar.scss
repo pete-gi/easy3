@@ -1,28 +1,34 @@
 @import '~malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css';
-
 $scrollbar-width: 10px;
-$border-radius: 5px;
-$rail-color: darken($white, 30%);
-$dragger-color: lighten($black, 30%);
-
+$border-radius: 0;
+$rail-color: $color-secondary-light;
+$dragger-color: $color-primary-light;
 #page {
     max-height: 100vh;
+    &>.mCustomScrollBox {
+        .mCSB_container {
+            margin-right: $scrollbar-width;
+        }
+        .mCSB_scrollTools {
+            z-index: 20;
+        }
+    }
 }
 
 .mCSB_draggerRail {
-    width: $scrollbar-width!important;
-    margin: 0!important;
-    background-color: $rail-color!important;
-    border-top-left-radius: $border-radius;
-    border-top-right-radius: $border-radius;
-    border-bottom-left-radius: $border-radius;
-    border-bottom-right-radius: $border-radius;
+    width: $scrollbar-width !important;
+    margin: 0 !important;
+    background-color: $rail-color !important;
+    border-radius: $border-radius !important;
 }
+
 .mCSB_dragger_bar {
-    width: $scrollbar-width!important;
-    background-color: $dragger-color!important;
+    width: $scrollbar-width !important;
+    background-color: $dragger-color !important;
+    border-radius: $border-radius !important;
 }
+
 .mCSB_scrollTools_vertical {
-    width: $scrollbar-width!important;
-    margin: 0!important;
+    width: $scrollbar-width !important;
+    margin: 0 !important;
 }
