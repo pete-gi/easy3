@@ -8,6 +8,9 @@ class Mail {
     var $layout;
     var $headers;
     var $recaptcha = null;
+    var $smtp = [
+        'active' => false
+    ];
     
     function create() {
         $this->data = $_POST;
@@ -17,7 +20,7 @@ class Mail {
         $this->createData();
         $this->createLayout();
         $this->createHeaders();
-        $this->topic = "=?utf-8?B?" . base64_encode($this->data['topic']) . "?=";
+        $this->subject = "=?utf-8?B?" . base64_encode($this->data['topic']) . "?=";
 
         $this->check();
     }
@@ -64,19 +67,53 @@ class Mail {
 
     function check() {
         $config = new Config(\Base::instance()->get('config'));
-        if ($config->recaptcha) {
-            if ($this->validateReCaptcha()) {
-                $this->send();
-            } else {
-                \Base::instance()->error(500);
-            }
+        $this->smtp = $config->smtp;
+
+        if ($this->smtp['active']) {
+            $this->send_smtp();
         } else {
-            $this->send();
+            if ($config->recaptcha) {
+                if ($this->validateReCaptcha()) {
+                    $this->send();
+                } else {
+                    \Base::instance()->error(500);
+                }
+            } else {
+                $this->send();
+            }
         }
+
+        
     }
 
     function send() {
-        mail($this->to, $this->topic, $this->layout, $this->headers);
+        try {
+            mail($this->to, $this->subject, $this->layout, $this->headers);
+        } catch (Exception $err) {
+            var_dump($err);
+        }
+    }
+
+    function send_smtp() {
+        $smtp = new SMTP(
+            $this->smtp['host'],
+            $this->smtp['port'],
+            $this->smtp['scheme'],
+            $this->smtp['user'],
+            $this->smtp['pw']
+        );
+        $smtp->set('From', '"'.$this->data['name'].'" <'.$this->smtp['user'].'>');
+        $smtp->set('To', $this->to);
+        $smtp->set('Reply-To', '"'.$this->data['name'].'" <'.$this->data['email'].'>');
+        $smtp->set('Content-Type', 'text/html; charset=utf-8');
+        $smtp->set('Subject', $this->subject);
+        try {
+            $smtp->send($this->layout);
+            var_dump($smtp->log());
+        } catch (Exception $err) {
+            var_dump($err);
+            var_dump($smtp->log());
+        }
     }
 
 };
