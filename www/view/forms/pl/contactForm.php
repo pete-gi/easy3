@@ -47,7 +47,7 @@ return [
         ]
     ],
     'options' => [
-        'from' => 'formularz@inet-media.pl',
+        'from' => 'formularz@inet-media.pl', // przy opcji SMTP ten mail nie jest brany pod uwage
         'to' => '',
         'topic' => 'Wiadomość z formularza kontaktowego ' . $config->siteName,
         'template' => 'mail-email'
