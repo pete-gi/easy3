@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 const src = 'src';
@@ -91,6 +92,7 @@ const config = {
             'window.$': 'jquery',
         }),
         new ExtractTextWebpackPlugin('css/[name].css'),
+        new VueLoaderPlugin(),
         new UglifyJSPlugin({
             uglifyOptions: {
                 mangle: false,

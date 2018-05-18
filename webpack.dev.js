@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 const src = 'src';
 const dist = 'www/view/assets';
@@ -86,7 +87,8 @@ const config = {
             '$': 'jquery',
             'window.$': 'jquery',
         }),
-        new ExtractTextWebpackPlugin('css/[name].css')
+        new ExtractTextWebpackPlugin('css/[name].css'),
+        new VueLoaderPlugin()
     ]
 };
 
