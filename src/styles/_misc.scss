@@ -5,7 +5,7 @@ a {
         color: inherit;
         text-decoration: none;
     }
-    &.underline {
+    &[class=""], &:not([class]), &:not([role="button"]) {
         position: relative;
         &:after {
             content: '';
@@ -14,13 +14,18 @@ a {
             bottom: 0;
             width: 100%;
             height: 1px;
+            opacity: 0;
             transform: scaleX(0);
             transform-origin: 0 50%;
-            transition-duration: 0.2s;
-            background-color: $color-text;
+            transition: opacity 0.4s, transform 0.2s;
+            background-color: currentColor;
         }
         &:hover, &:focus {
-            transform: scaleX(1);
+            &:after {
+                opacity: 1;
+                transform: scaleX(1);
+                transition: opacity 0.2s, transform 0.3s;
+            }
         }
     }
 }
