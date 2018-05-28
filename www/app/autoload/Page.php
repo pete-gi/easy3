@@ -35,12 +35,11 @@ class Page {
             $f3->set('page', $this);
             echo \Template::instance()->render($layoutpath);
         } else {
-            $code = $f3->get('ERROR.code');
-            self::error($code);
+            self::error();
         }
     }
 
-    static function error($code) {
+    static function error() {
         $path = new Path();
         $errorPath = $path->error('view');
         $errorFile = include($errorPath);

@@ -4,15 +4,19 @@
             <slot></slot>
         </template>
         <template v-else>
-            <a v-for="img in data" :key="img.filename" :href="img.imagepath" class="gallery-item" :data-fancybox="img.galleryname">
-                <img :src="img.thumbpath" alt="" :title="img.filename">
-            </a>
+            <gallery-image v-for="img in data" :key="img.filename" :href="img.imagepath" className="gallery-item" :fancybox="img.galleryname"
+                :src="img.thumbpath" alt="" :title="img.filename">
+            </gallery-image>
         </template>
     </div>
 </template>
 
 <script>
+    import galleryImage from './gallery-image.vue'
     export default {
+        components: {
+            galleryImage
+        },
         data() {
             return {
                 editmode: false,

@@ -5,7 +5,7 @@ a {
         color: inherit;
         text-decoration: none;
     }
-    &[class=""], &:not([class]), &:not([role="button"]) {
+    &.super, &.underline {
         position: relative;
         &:after {
             content: '';
