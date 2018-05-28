@@ -3,7 +3,7 @@
 class Lang {
 
     var $multilang;
-    var $current;
+    var $current = null;
 
     function __construct() {
         $f3 = \Base::instance();
@@ -14,19 +14,18 @@ class Lang {
         } else {
             $this->multilang = false;
         }
-        $this->current = $this->getCurrentFromLocale();
+        if ($this->current === null) {
+            $this->current = $this->getCurrentFromLocale();
+        }
     }
 
     function getCurrentFromLocale() {
-        $locale = \Base::instance()->get('LANGUAGE');
-        $comaPosition = strpos($locale, ',');
-        $hyphenPosition = strpos($locale, '-');
-        $position = $comaPosition > $hyphenPosition ? $hyphenPosition : $comaPosition;
-        $lang = substr($locale, 0, $position);
+        $uri = $_SERVER['REQUEST_URI'];
+        $base = \Base::instance()->get('BASE');
         
-        $routesData = include('config/routing.php');
-        if (!$routesData[$lang]) {
-            $lang = \Base::instance()->get('FALLBACK');
+        $lang = substr($uri, strlen($base)+1, strlen($base)+3);
+        if (strlen($lang) > 2) {
+            $lang = substr($lang, 0, 2);
         }
 
         return $lang;
