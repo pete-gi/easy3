@@ -11,12 +11,14 @@ class Lang {
         $config = new Config($conf);
         if ($config->multilang) {
             $this->multilang = true;
+            if ($this->current === null) {
+                $this->current = $this->getCurrentFromLocale();
+            }
         } else {
             $this->multilang = false;
+            $this->current = $config->defaultLang;
         }
-        if ($this->current === null) {
-            $this->current = $this->getCurrentFromLocale();
-        }
+        
     }
 
     function getCurrentFromLocale() {
@@ -27,7 +29,6 @@ class Lang {
         if (strlen($lang) > 2) {
             $lang = substr($lang, 0, 2);
         }
-
         return $lang;
     }
 
