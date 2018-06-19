@@ -18,6 +18,10 @@ class Lang {
             $this->multilang = false;
             $this->current = $config->defaultLang;
         }
+
+        if ($this->current == false) {
+            $this->current = $f3->get('FALLBACK');
+        }
         
     }
 
