@@ -9,17 +9,26 @@ class Path {
     function url($page) {
         $lang = new Lang();
         if ($lang->multilang) {
-            return \Base::instance()->get('BASE') . $lang->current . Page::get($page)['url'];
+            return \Base::instance()->get('BASE') . '/' . $lang->current . Page::get($page)['url'];
         } else {
             return \Base::instance()->get('BASE') . Page::get($page)['url'];
         }
+    }
+
+    function mail() {
         
+        $lang = new Lang();
+        if ($lang->multilang) {
+            return \Base::instance()->get('BASE') . '/' . $lang->current . '/send-mail';
+        } else {
+            return \Base::instance()->get('BASE') . '/send-mail';
+        }
     }
 
     function href($page) {
         $lang = new Lang();
         if ($lang->multilang) {
-            return \Base::instance()->get('BASE') . $lang->current . Page::get($page)['url'];
+            return \Base::instance()->get('BASE') . '/' . $lang->current . Page::get($page)['url'];
         } else {
             return \Base::instance()->get('BASE') . Page::get($page)['url'];
         }
