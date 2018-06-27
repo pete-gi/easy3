@@ -15,6 +15,7 @@ Vue.use(VueResource)
 let vue = new Vue({
     el: '#page',
     data: {
+        sendingMail: false,
         rodo: {
             checkbox: null,
             info: false,
@@ -29,15 +30,18 @@ let vue = new Vue({
                 this.rodo.warning = false;
                 let form = document.getElementById(id);
                 let formData = new FormData(form);
+                this.sendingMail = 'sending';
 
                 form.classList.add('form-sending');
 
                 Vue.http.post(form.action, formData).then(res => {
                     form.classList.remove('form-sending');
                     form.classList.add('form-success');
+                    this.sendingMail = 'success';
                 }, res => {
                     form.classList.remove('form-sending');
                     form.classList.add('form-failure');
+                    this.sendingMail = 'failure';
                 });
             }
 

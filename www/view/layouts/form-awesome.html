@@ -1,13 +1,5 @@
 <form class="form" id="{{@formName}}" action="{{@path->mail()}}" @submit.prevent="sendMail('{{@formName}}')">
-    <div class="form-alert form-alert-sending">
-        <i class="fa fa-spinner fa-pulse"></i>
-    </div>
-    <div class="form-alert form-alert-success">
-        <i class="fa fa-check"></i>
-    </div>
-    <div class="form-alert form-alert-failure">
-        <i class="fa fa-close"></i>
-    </div>
+    <div class="form-overlay" :class="{'is-active': sendingMail}"></div>
     <input type="hidden" name="formName" value="{{@formName}}">
     <input type="hidden" name="from" value="{{@formData.options.from}}">
     <input type="hidden" name="to" value="{{@formData.options.to}}">
@@ -67,5 +59,10 @@
         <input type="hidden" name="secretKey" value="{{@formData.recaptcha.secretKey}}">
         <div class="g-recaptcha" data-sitekey="{{@formData.recaptcha.siteKey}}"></div>
     </check>
-    <button class="button" type="submit" disabled="sendingMail">{{@t['submit']}}</button>
+    <button class="button button--awesome" :class="`button--${sendingMail}`" :disabled="sendingMail" type="submit">
+        {{@t['submit']}}
+        <span class="sending"><i class="fa fa-spinner fa-pulse"></i></span>
+        <span class="success"><i class="fa fa-check"></i></span>
+        <span class="failure"><i class="fa fa-close"></i></span>
+    </button>
 </form>
