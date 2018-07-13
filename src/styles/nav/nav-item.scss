@@ -1,3 +1,5 @@
+@import './nav-item-active';
+
 .nav-link {
     padding: 1.5rem;
     @media #{$min-md} {
@@ -44,13 +46,13 @@
     }
     &:hover,
     &:focus {
-        @import './nav-item-active';
+        @extend .nav-link-active;
     }
     &.active a.nav-link {
         &,
         &:hover,
         &:focus {
-            @import './nav-item-active';
+            @extend .nav-link-active;
         }
     }
 }
