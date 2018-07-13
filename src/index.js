@@ -11,7 +11,7 @@ import Fancybox from './scripts/jquery/fancybox';
 
 import ScrollTo from './scripts/jquery/scrollTo';
 import ScrollTop from './scripts/jquery/scrollToTop';
-import NavScroll from './scripts/jquery/navScroll';
+// import NavScroll from './scripts/jquery/navScroll';
 // import Accordion from './scripts/jquery/accordion';
 
 import vue from './scripts/vue';
