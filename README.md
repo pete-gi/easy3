@@ -92,6 +92,7 @@
 * {{@form->create('NAZWA-PLIKU-FORMULARZA')}} - formularz
 * `<tel></tel>` - klikalny numer telefonu
 * `<email></email>` - klikalny adres e-mail
+* `<www></www>` - klikalny adres www (atrybut ssl z wartością true/false aby mieć https://)
 * `<gmap id="" center="" zoom=""></gmap>` - kontener mapy Google
 * `<gmarker coords="" title="" color=""></gmarker>` - punkt na mapie Google
 * `<parallax img="" height=""></parallax>` - parallax

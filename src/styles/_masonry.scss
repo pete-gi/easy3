@@ -10,37 +10,37 @@ $padd-v: 1.5rem;
 
 // WIDTH 1-3
 .grid-sizer, .grid-item {
-    @media #{$min-xs} {
+    @media #{$min-sm} {
         width: $base-width * 2;
     }
-    @media #{$min-sm} {
+    @media #{$min-md} {
         width: calc(#{$base-width} * 4 / 3);
     }
-    @media #{$min-md} {
+    @media #{$min-lg} {
         width: $base-width;
     }
 }
 
 .grid-item--w-2 {
-    @media #{$min-xs} {
-        width: $base-width * 2;
-    }
     @media #{$min-sm} {
         width: $base-width * 2;
     }
     @media #{$min-md} {
+        width: $base-width * 2;
+    }
+    @media #{$min-lg} {
         width: $base-width * 2;
     }
 }
 
 .grid-item--w-3 {
-    @media #{$min-xs} {
-        width: $base-width * 2;
-    }
     @media #{$min-sm} {
         width: $base-width * 2;
     }
     @media #{$min-md} {
+        width: $base-width * 2;
+    }
+    @media #{$min-lg} {
         width: $base-width * 3;
     }
 }

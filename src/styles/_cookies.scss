@@ -18,12 +18,12 @@ $borderColor: $color-primary;
     border-bottom: 0px;
     line-height: 120%;
     color: $color;
-    @media #{$max-xs} {
+    @media #{$max-sm} {
         max-width: initial;
         width: 100%;
     }
     br {
-        @media #{$max-xs} {
+        @media #{$max-sm} {
             display: none;
         }
     }
@@ -34,7 +34,7 @@ $borderColor: $color-primary;
     .content {
         max-width: 140px;
         margin-right: 30px;
-        @media #{$max-xs} {
+        @media #{$max-sm} {
             width: 100%;
             max-width: initial;
             text-align: center;
@@ -52,7 +52,7 @@ $borderColor: $color-primary;
     padding: 5px 8px;
     color: #FFFFFF;
     cursor: pointer;
-    @media #{$max-xs} {
+    @media #{$max-sm} {
         font-size: 30px;
         top: -41px;
     }

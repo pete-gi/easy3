@@ -1,0 +1,11 @@
+.dropdown-menu {
+    background-color: $black;
+    .dropdown-item {
+        @import './nav/nav-item';
+        &.active,
+        &:hover,
+        &:focus {
+            @extend .nav-link-active;
+        }
+    }
+}

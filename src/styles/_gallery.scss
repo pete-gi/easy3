@@ -1,4 +1,4 @@
-@import '../node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.css';
+@import '~@fancyapps/fancybox/dist/jquery.fancybox.min.css';
 .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -14,19 +14,19 @@
         width: calc(100% / 2 - 1rem);
         padding-bottom: 30%;
         background-color: rgba($color-text, 0.3);
-        @media #{$min-xs} {
+        @media #{$min-sm} {
             width: calc(100% / 3 - 1rem);
             padding-bottom: 22%;
         }
-        @media #{$min-sm} {
+        @media #{$min-md} {
             width: calc(100% / 4 - 1rem);
             padding-bottom: 18%;
         }
-        @media #{$min-md} {
+        @media #{$min-lg} {
             width: calc(100% / 5 - 1rem);
             padding-bottom: 14%;
         }
-        @media #{$min-lg} {
+        @media #{$min-xl} {
             width: calc(100% / 6 - 1rem);
             padding-bottom: 12%;
         }
