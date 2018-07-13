@@ -1,19 +1,19 @@
 .padd-v {
     padding-top: 4rem;
     padding-bottom: 4rem;
-    @media #{$min-xs} {
+    @media #{$min-sm} {
         padding-top: 5rem;
         padding-bottom: 5rem;
     }
-    @media #{$min-sm} {
+    @media #{$min-md} {
         padding-top: 6rem;
         padding-bottom: 6rem;
     }
-    @media #{$min-md} {
+    @media #{$min-lg} {
         padding-top: 7rem;
         padding-bottom: 7rem;
     }
-    @media #{$min-lg} {
+    @media #{$min-xl} {
         padding-top: 8rem;
         padding-bottom: 8rem;
     }
@@ -21,15 +21,15 @@
 .padd-v-min {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    @media #{$min-xs} {
+    @media #{$min-sm} {
         padding-top: 1.5rem;
         padding-bottom: 1.5rem;
     }
-    @media #{$min-md} {
+    @media #{$min-lg} {
         padding-top: 2rem;
         padding-bottom: 2rem;
     }
-    @media #{$min-lg} {
+    @media #{$min-xl} {
         padding-top: 3rem;
         padding-bottom: 3rem;
     }
@@ -37,15 +37,15 @@
 .padd-v-max {
     padding-top: 8rem 0;
     padding-bottom: 8rem 0;
-    @media #{$min-xs} {
+    @media #{$min-sm} {
         padding-top: 10rem;
         padding-bottom: 10rem;
     }
-    @media #{$min-md} {
+    @media #{$min-lg} {
         padding-top: 12rem;
         padding-bottom: 12rem;
     }
-    @media #{$min-lg} {
+    @media #{$min-xl} {
         padding-top: 14rem;
         padding-bottom: 14rem;
     }

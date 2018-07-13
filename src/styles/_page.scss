@@ -18,7 +18,7 @@
     }
     &-default-side {
         flex-direction: column;
-        @media #{$min-sm} {
+        @media #{$min-md} {
             flex-direction: row;
             justify-content: flex-end;
         }
@@ -30,21 +30,21 @@
         width: 100%;
     }
     .page--aside {
-        @media #{$min-sm} {
+        @media #{$min-md} {
             position: fixed;
             left: 0;
             top: 0;
             height: 100vh;
             width: 25%;
         }
-        @media #{$min-md} {
+        @media #{$min-lg} {
             width: 25%;
         }
-        @media #{$min-lg} {
+        @media #{$min-xl} {
             width: 20%;
         }
         .navbar {
-            @media #{$min-sm} {
+            @media #{$min-md} {
                 width: 100%;
                 &>.container {
                     width: 100%;
@@ -71,13 +71,13 @@
     }
     .page--main {
         float: right;
-        @media #{$min-sm} {
-            max-width: 75%;
-        }
         @media #{$min-md} {
             max-width: 75%;
         }
         @media #{$min-lg} {
+            max-width: 75%;
+        }
+        @media #{$min-xl} {
             max-width: 80%;
         }
         min-height: 100vh;

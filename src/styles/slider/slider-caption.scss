@@ -9,16 +9,16 @@
         font-family: $font-secondary;
         font-size: 2.0rem;
         margin: 0;
-        @media #{$min-xs} {
+        @media #{$min-sm} {
             font-size: 2.2rem;
         }
-        @media #{$min-sm} {
+        @media #{$min-md} {
             font-size: 2.4rem;
         }
-        @media #{$min-md} {
+        @media #{$min-lg} {
             font-size: 2.8rem;
         }
-        @media #{$min-lg} {
+        @media #{$min-xl} {
             font-size: 3rem;
         }
     }
@@ -27,7 +27,7 @@
         font-size: 1.6rem;
         line-height: 1.6;
         margin: 0;
-        @media #{$min-sm} {
+        @media #{$min-md} {
             font-size: 1.7rem;
         }
     }

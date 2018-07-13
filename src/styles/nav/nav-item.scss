@@ -1,12 +1,12 @@
 .nav-link {
     padding: 1.5rem;
-    @media #{$min-sm} {
+    @media #{$min-md} {
         padding: 1.5rem 2rem;
     }
-    @media #{$min-md} {
+    @media #{$min-lg} {
         padding: 1.2rem 2rem;
     }
-    @media #{$min-lg} {
+    @media #{$min-xl} {
         padding: 1.2rem 2.5rem;
     }
     color: $color-text;
@@ -31,13 +31,26 @@
         opacity: 0;
         transition-duration: 0.2s;
         z-index: -1;
+        @media #{$min-md} {
+            top: unset;
+            bottom: 0;
+            width: calc(100% - 4rem);
+            height: 0.75rem;
+            transform: translateX(-50%);
+        }
+        @media #{$min-xl} {
+            width: calc(100% - 5rem);
+        }
     }
-}
-
-.nav-link-active {
-    color: $white;
-    background-color: transparent;
-    &:before {
-        opacity: 1;
+    &:hover,
+    &:focus {
+        @import './nav-item-active';
+    }
+    &.active a.nav-link {
+        &,
+        &:hover,
+        &:focus {
+            @import './nav-item-active';
+        }
     }
 }

@@ -14,7 +14,7 @@
     .slides,
     .slides li {
         height: $slider-subpage-height;
-        @media #{$min-md} {
+        @media #{$min-lg} {
             height: $slider-md-height;
         }
     }

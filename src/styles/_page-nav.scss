@@ -13,20 +13,7 @@
         
     }
     li.nav-item {
-        a.nav-link {
-            @import './nav/nav-item';
-            &:hover,
-            &:focus {
-                @extend .nav-link-active;
-            }
-        }
-        &.active a.nav-link {
-            &,
-            &:hover,
-            &:focus {
-                @extend .nav-link-active;
-            }
-        }
+        @import './nav/nav-item';
         &.dropdown {
             @import './nav/nav-dropdown';
         }

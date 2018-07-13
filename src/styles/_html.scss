@@ -1,10 +1,10 @@
 html {
     background-color: $white;
     font-size: 10px;
-    @media #{$min-sm} {
+    @media #{$min-md} {
         font-size: 9px;
     }
-    @media #{$min-lg} {
+    @media #{$min-xl} {
         font-size: 10px;
     }
 }
