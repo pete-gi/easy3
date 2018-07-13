@@ -79,29 +79,47 @@
     }
 }
 
-.font-primary {
-    font-family: $font-primary;
-}
-.font-secondary {
-    font-family: $font-secondary;
-}
-
-.bg-white {
-    color: $color-text;
-    background-color: $white;
-}
-.bg-black {
-    color: invert($color-text);
-    background-color: $black;
-}
-.bg-primary {
-    background-color: $color-primary;
-}
-.bg-secondary {
-    background-color: $color-secondary;
-}
-.bg-triary {
-    background-color: $color-triary;
+.page {
+    .font-primary {
+        font-family: $font-primary;
+    }
+    .font-secondary {
+        font-family: $font-secondary;
+    }
+    
+    .bg-primary {
+        background-color: $color-primary;
+    }
+    .bg-secondary {
+        background-color: $color-secondary;
+    }
+    .bg-triary {
+        background-color: $color-triary;
+    }
+    .bg-white {
+        color: $color-text;
+        background-color: $white;
+    }
+    .bg-black {
+        color: invert($color-text);
+        background-color: $black;
+    }
+    
+    .color-primary {
+        color: $color-primary;
+    }
+    .color-secondary {
+        color: $color-secondary;
+    }
+    .color-triary {
+        color: $color-triary;
+    }
+    .color-white {
+        color: $white;
+    }
+    .color-black {
+        color: $black;
+    }
 }
 
 .overflow {

@@ -20,6 +20,6 @@ h6, .h6 {
 @for $i from 1 through 6 {
     h#{$i}, .h#{$i} {
         margin: 1rem 0;
-        line-height: 1.4;
+        line-height: 1.1;
     }
 }
