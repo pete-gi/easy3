@@ -1,45 +1,15 @@
-@import 'slider/flexslider';
+// WYSOKOSC SLIDERA
+$slider-subpage-height: 50rem;
+$slider-md-height: 100vh;
+@import './slider/flexslider';
+@import './slider/slider-caption';
+
 .page--slider {
     z-index: 10;
     @at-root #page:not([data-page="index"]) & {
-        max-height: 50rem;
+        max-height: $slider-subpage-height;
         overflow: hidden;
         display: flex;
         align-items: center;
-    }
-}
-
-.slider-caption {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    width: 100%;
-    transform: translateY(-50%);
-    z-index: 20;
-    &-main {
-        font-family: $font-secondary;
-        font-size: 2.0rem;
-        margin: 0;
-        @media #{$min-xs} {
-            font-size: 2.2rem;
-        }
-        @media #{$min-sm} {
-            font-size: 2.4rem;
-        }
-        @media #{$min-md} {
-            font-size: 2.8rem;
-        }
-        @media #{$min-lg} {
-            font-size: 3rem;
-        }
-    }
-    &-text {
-        font-family: $font-primary;
-        font-size: 1.6rem;
-        line-height: 1.6;
-        margin: 0;
-        @media #{$min-sm} {
-            font-size: 1.7rem;
-        }
     }
 }

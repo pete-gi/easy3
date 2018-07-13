@@ -30,35 +30,48 @@
     }
 }
 
-// Mixin na szybkie ustawienie czegos dla konkretnego zakresu szerokosci ekranu
-@mixin lg {
-    @media #{$min-md} {
-        @content;
-    }
-}
-@mixin md {
-    @media #{$max-md} {
+// Mixiny na breakpointy
+@mixin min($size) {
+    @if $size == 'sm' {
         @media #{$min-sm} {
             @content;
         }
     }
-}
-@mixin sm {
-    @media #{$max-sm} {
-        @media #{$min-xs} {
+    @if $size == 'md' {
+        @media #{$min-md} {
+            @content;
+        }
+    }
+    @if $size == 'lg' {
+        @media #{$min-lg} {
+            @content;
+        }
+    }
+    @if $size == 'xl' {
+        @media #{$min-xl} {
             @content;
         }
     }
 }
-@mixin xs {
-    @media #{$max-xs} {
-        @media #{$min-xx} {
+@mixin max($size) {
+    @if $size == 'sm' {
+        @media #{$max-sm} {
             @content;
         }
     }
-}
-@mixin xx {
-    @media #{$max-xx} {
-        @content;
+    @if $size == 'md' {
+        @media #{$max-md} {
+            @content;
+        }
+    }
+    @if $size == 'lg' {
+        @media #{$max-lg} {
+            @content;
+        }
+    }
+    @if $size == 'xl' {
+        @media #{$max-xl} {
+            @content;
+        }
     }
 }
