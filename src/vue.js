@@ -1,16 +1,16 @@
 import Vue from 'vue';
 import VueResource from 'vue-resource';
-import cookies from './vue-components/cookies.vue';
-import gmap from './vue-components/gmap.vue';
-import gmarker from './vue-components/gmarker.vue';
-import parallax from './vue-components/parallax.vue';
-import tel from './vue-components/tel.vue';
-import email from './vue-components/email.vue';
-import www from './vue-components/www.vue';
-import gallery from './vue-components/gallery-loader.vue';
-// import accordion from './vue-components/accordion.vue';
-// import masonry from './vue-components/masonry.vue';
-// import gridItem from './vue-components/masonry-grid.vue';
+import cookies from './components/cookies.vue';
+import gmap from './components/gmap.vue';
+import gmarker from './components/gmarker.vue';
+import parallax from './components/parallax.vue';
+import tel from './components/tel.vue';
+import email from './components/email.vue';
+import www from './components/www.vue';
+import gallery from './components/gallery-loader.vue';
+// import accordion from './components/accordion.vue';
+// import masonry from './components/masonry.vue';
+// import gridItem from './components/masonry-grid.vue';
 
 Vue.use(VueResource)
 let vue = new Vue({

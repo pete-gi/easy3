@@ -2,19 +2,19 @@ import 'bootstrap';
 
 import './index.scss';
 
-// import CustomScrollbar from './scripts/jquery/customScrollbar';
-import Flexslider from './scripts/jquery/flexslider';
-import Fancybox from './scripts/jquery/fancybox';
-// import Slick from './scripts/jquery/slick';
-// import MasonryGrid from './scripts/jquery/masonry';
-// import AOSAnimate from './scripts/jquery/aos';
+// import CustomScrollbar from './scripts/customScrollbar';
+import Flexslider from './scripts/flexslider';
+import Fancybox from './scripts/fancybox';
+// import Slick from './scripts/slick';
+// import MasonryGrid from './scripts/masonry';
+// import AOSAnimate from './scripts/aos';
 
-import ScrollTo from './scripts/jquery/scrollTo';
-import ScrollTop from './scripts/jquery/scrollToTop';
-// import NavScroll from './scripts/jquery/navScroll';
-// import Accordion from './scripts/jquery/accordion';
+import ScrollTo from './scripts/scrollTo';
+import ScrollTop from './scripts/scrollToTop';
+// import NavScroll from './scripts/navScroll';
+// import Accordion from './scripts/accordion';
 
-import vue from './scripts/vue';
+import vue from './vue';
 
 $(window).on('load', function() {
     // let scrollbar = new CustomScrollbar('#page');
