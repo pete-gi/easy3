@@ -6,6 +6,7 @@ import gmarker from './vue-components/gmarker.vue';
 import parallax from './vue-components/parallax.vue';
 import tel from './vue-components/tel.vue';
 import email from './vue-components/email.vue';
+import www from './vue-components/www.vue';
 import gallery from './vue-components/gallery-loader.vue';
 // import accordion from './vue-components/accordion.vue';
 // import masonry from './vue-components/masonry.vue';
@@ -63,6 +64,7 @@ let vue = new Vue({
         parallax,
         tel,
         email,
+        www,
         gallery,
         // accordion,
         // masonry,

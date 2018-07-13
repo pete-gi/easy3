@@ -35,10 +35,10 @@ $(window).on('load', function() {
     let lightboxItem = new Fancybox('.lightbox');
     lightboxItem.init();
 
-    let navScroll = new NavScroll('#page-nav');
-    navScroll.classToggle = 'nav-inverted';
-    navScroll.offset = 1;
-    navScroll.init();
+    // let navScroll = new NavScroll('#page-nav');
+    // navScroll.classToggle = 'nav-inverted';
+    // navScroll.offset = 1;
+    // navScroll.init();
 
     // let slick = new Slick('.slick-carousel');
     // slick.responsive(575, 2);
