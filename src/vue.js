@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import VueResource from 'vue-resource';
 import cookies from './components/cookies.vue';
-import gmap from './components/gmap.vue';
-import gmarker from './components/gmarker.vue';
+// import gmap from './components/gmap.vue';
+// import gmarker from './components/gmarker.vue';
 import parallax from './components/parallax.vue';
 import tel from './components/tel.vue';
 import email from './components/email.vue';
@@ -59,8 +59,8 @@ let vue = new Vue({
     },
     components: {
         cookies,
-        gmap,
-        gmarker,
+        // gmap,
+        // gmarker,
         parallax,
         tel,
         email,
