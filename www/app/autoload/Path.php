@@ -34,6 +34,13 @@ class Path {
         }
     }
 
+    function hash($page, $pre = '') {
+        if ($page === 'index') {
+            $page = 'page';
+        }
+        return '#' . $pre . '-' . Page::get($page)['url'];
+    }
+
     function img($file) {
         return \Base::instance()->get('BASE')  . '/' . 'view/'  . "assets/img/$file";
     }

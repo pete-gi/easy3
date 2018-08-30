@@ -7,6 +7,8 @@ class Mail {
     var $to;
     var $layout;
     var $headers;
+    var $topic = '';
+    var $subject = '';
     var $recaptcha = null;
     var $smtp = [
         'active' => false
@@ -17,6 +19,7 @@ class Mail {
         $this->from = $this->data['from'];
         $this->to = $this->data['to'];
         $this->template = $this->data['template'];
+        $this->topic = $this->data['topic'];
         $this->createData();
         $this->createLayout();
         $this->createHeaders();

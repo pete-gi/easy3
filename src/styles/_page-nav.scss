@@ -1,4 +1,32 @@
 @import '~hamburgers/_sass/hamburgers/hamburgers.scss';
+
+$navbar-bg: transparent;
+$navbar-bg-md: transparent;
+
+$nav-item-color: $color-primary;
+// HOVER
+$nav-item-hover-color: $color-white;
+$nav-item-hover-background: $color-secondary;
+// MIN-MD
+$nav-item-color-md: $color-primary;
+// MIN-MD HOVER
+$nav-item-hover-color-md: $color-primary;
+$nav-item-hover-background-md: $color-secondary;
+
+// INVERTED
+$navbar-inverted-bg: transparent;
+$navbar-inverted-bg-md: transparent;
+
+$nav-item-inverted-color: $color-primary;
+// HOVER
+$nav-item-inverted-hover-color: $color-white;
+$nav-item-inverted-hover-background: $color-secondary;
+// MIN-MD
+$nav-item-inverted-color-md: $color-primary;
+// MIN-MD HOVER
+$nav-item-inverted-hover-color-md: $color-primary;
+$nav-item-inverted-hover-background-md: $color-secondary;
+
 .page--nav {
     margin: 0;
     padding: 0;
@@ -6,6 +34,10 @@
     border-radius: 0;
     z-index: 20;
     position: relative;
+    background-color: $navbar-bg;
+    @media #{$min-md} {
+        background-color: $navbar-bg-md;
+    }
     @import './nav/nav-header';
     .navbar-collapse {
         

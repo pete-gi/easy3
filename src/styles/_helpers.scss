@@ -35,8 +35,8 @@
     }
 }
 .padd-v-max {
-    padding-top: 8rem 0;
-    padding-bottom: 8rem 0;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
     @media #{$min-sm} {
         padding-top: 10rem;
         padding-bottom: 10rem;
@@ -49,6 +49,13 @@
         padding-top: 14rem;
         padding-bottom: 14rem;
     }
+}
+
+.padd-0 {
+    padding: 0 !important;
+}
+.marg-0 {
+    margin: 0 !important;
 }
 
 .marg-top {
@@ -64,7 +71,8 @@
     margin-bottom: 8rem;
 }
 
-.separator, .sep {
+.separator,
+.sep {
     @include section;
     height: 1px;
     border: 0;
@@ -77,6 +85,9 @@
     &--secondary {
         background-color: $color-secondary;
     }
+    &--triary {
+        background-color: $color-triary;
+    }
 }
 
 .page {
@@ -86,7 +97,7 @@
     .font-secondary {
         font-family: $font-secondary;
     }
-    
+
     .bg-primary {
         background-color: $color-primary;
     }
@@ -97,14 +108,12 @@
         background-color: $color-triary;
     }
     .bg-white {
-        color: $color-text;
         background-color: $white;
     }
     .bg-black {
-        color: invert($color-text);
         background-color: $black;
     }
-    
+
     .color-primary {
         color: $color-primary;
     }

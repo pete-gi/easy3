@@ -3,37 +3,50 @@
     left: 0;
     top: 0;
     width: 100%;
-    background-color: transparent;
     transition-duration: 0.3s;
     box-shadow: 0 0 0 0 transparent;
     &.nav-inverted {
-        background-color: $black;
+        background-color: $navbar-inverted-bg;
         box-shadow: 0 5px 15px 0 rgba($black, 0.4);
+        @media #{$min-md} {
+            background-color: $navbar-inverted-bg-md;
+        }
         .navbar-brand {
             img {
-                
             }
         }
         li.nav-item {
             a.nav-link {
-                color: $white;
+                color: $nav-item-inverted-color;
+                @media #{$min-md} {
+                    color: $nav-item-inverted-color-md;
+                }
+                &:before {
+                    background-color: $nav-item-inverted-hover-background;
+                    @media #{$min-md} {
+                        background-color: $nav-item-inverted-hover-background-md;
+                    }
+                }
             }
             &.active a.nav-link {
                 &,
                 &:hover,
                 &:focus {
-                    color: $white;
+                    color: $nav-item-inverted-hover-color;
+                    @media #{$min-md} {
+                        color: $nav-item-inverted-hover-color-md;
+                    }
                 }
             }
             &.dropdown {
                 .dropdown-menu {
-                    background-color: $black;
+                    background-color: $white;
                     .dropdown-item {
                         color: $white;
                         &.active,
                         &:hover,
                         &:focus {
-                            color: $white;
+                            color: $nav-item-inverted-hover-color;
                         }
                     }
                 }
