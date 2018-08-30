@@ -11,7 +11,7 @@
     @media #{$min-xl} {
         padding: 1.2rem 2.5rem;
     }
-    color: $color-text;
+    color: $nav-item-color;
     background-color: transparent;
     text-transform: uppercase;
     font-size: 1.5rem;
@@ -21,6 +21,9 @@
     overflow: hidden;
     position: relative;
     z-index: 0;
+    @media #{$min-md} {
+        color: $nav-item-color-md;
+    }
     &:before {
         content: '';
         position: absolute;
@@ -29,7 +32,7 @@
         width: 100%;
         height: 100%;
         transform: translate(-50%, -50%);
-        background-color: $color-primary;
+        background-color: $nav-item-hover-background;
         opacity: 0;
         transition-duration: 0.2s;
         z-index: -1;
@@ -39,6 +42,7 @@
             width: calc(100% - 4rem);
             height: 0.75rem;
             transform: translateX(-50%);
+            background-color: $nav-item-hover-background-md;
         }
         @media #{$min-xl} {
             width: calc(100% - 5rem);

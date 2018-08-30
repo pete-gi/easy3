@@ -1,6 +1,9 @@
 .nav-link-active {
-    color: $white;
+    color: $nav-item-hover-color;
     background-color: transparent;
+    @media #{$min-md} {
+        color: $nav-item-hover-color-md;
+    }
     &:before {
         opacity: 1;
     }
