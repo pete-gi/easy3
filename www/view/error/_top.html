@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><?php echo \Base::instance()->config('config/config.ini')['config']['siteName'] ?></title>
+    <title><?php echo 'Błąd ' . \Base::instance()->get('t.error') . ' - ' . \Base::instance()->config('config/config.ini')['config']['siteName'] ?></title>
     <link rel="stylesheet" href="<?php echo $path->css('libs.css') ?>">
     <link rel="stylesheet" href="<?php echo $path->css('index.css') ?>">
     <link rel="icon" href="<?php echo $path->img('favicon.ico') ?>">
@@ -17,7 +17,7 @@
 
         <nav class="page--nav navbar navbar-expand-md">
             <div class="container">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="<?php echo $path->url('index') ?>">
                     <img src="<?php echo $path->img('logo.png') ?>" alt="">
                 </a>
         
