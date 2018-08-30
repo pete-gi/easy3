@@ -1,4 +1,3 @@
-import 'jquery';
 class ScrollTop {
     constructor(selector) {
         this.selector = selector;

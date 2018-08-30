@@ -1,4 +1,3 @@
-import 'jquery';
 class ScrollTo {
     constructor(selector) {
         this.selector = selector;

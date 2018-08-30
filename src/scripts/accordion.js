@@ -1,4 +1,3 @@
-import 'jquery';
 class Accordion {
     constructor(selector) {
         this.selector = selector;
