@@ -1,21 +1,23 @@
-<section class="section padd-v">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h2 class="page-title">
-                    {{@page->name}}
-                </h2>
+<main id="page-main" class="page--main section">
+    <section class="section padd-v">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="page-title">
+                        {{@page->name}}
+                    </h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-xs-6 col-sm-5 col-md-4">
+
+                    <hr class="separator">
+                    {{@form->create('contactForm', 'form-awesome')}}
+                </div>
+                <div class="col-12 col-xs-6 col-sm-7 col-md-8">
+                    <!-- MAPA -->
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12 col-xs-6 col-sm-5 col-md-4">
-                
-                <hr class="separator">
-                {{@form->create('contactForm', 'form-awesome')}}
-            </div>
-            <div class="col-12 col-xs-6 col-sm-7 col-md-8">
-                <!-- MAPA -->
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
+</main>

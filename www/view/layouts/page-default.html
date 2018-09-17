@@ -38,7 +38,7 @@
 </head>
 
 <body>
-    <div id="page" class="page page-default" data-page="{{@page->key}}" data-editmode="{{@user->getAuth() ? 'true' : 'false'}}" @click="rodo.info = false">
+    <div id="page" class="page page-default" data-page="{{@page->key}}" @click="rodo.info = false">
 
         <check if="{{@config->preloader}}">
             <div id="page-preloader" class="is-active">
@@ -53,9 +53,7 @@
         <include href="{{@path->partial('page-nav/bootstrap4')}}" />
         <include href="{{@path->partial('page-slider/flexslider')}}" />
 
-        <main id="page-main" class="page--main section">
-            <include href="{{@path->page(@page->key)}}" />
-        </main>
+        <include href="{{@path->page(@page->key)}}" />
 
         <button class="scroll-top js-scroll-top">
             <i class="fa fa-angle-up"></i>
