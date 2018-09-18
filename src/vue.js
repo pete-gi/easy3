@@ -6,6 +6,7 @@ import tel from './components/tel.vue';
 import email from './components/email.vue';
 import www from './components/www.vue';
 import gallery from './components/gallery-loader.vue';
+import image from './components/image.vue';
 // import accordion from './components/accordion.vue';
 
 Vue.use(VueResource)
@@ -60,6 +61,7 @@ let vue = new Vue({
         email,
         www,
         gallery,
+        image,
         // accordion,
     }
 })
