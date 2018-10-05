@@ -9,6 +9,7 @@ import 'bulma/css/bulma.min.css';
 // sync(store, router);
 Vue.config.productionTip = false
 
+Vue.use(VueResource);
 new Vue({
     el: '#app',
     store,

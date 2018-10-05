@@ -1,6 +1,7 @@
 const settings = {
     namespaced: true,
     state: {
+        base: document.getElementsByTagName('base')[0].getAttribute('href'),
         lang_active: 'pl',
         lang_opposite: 'en',
         lang_list: [

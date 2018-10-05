@@ -2,56 +2,27 @@
 
 class Page {
 
-    function __construct($route = null) {
-        $f3 = \Base::instance();
-        if ($data !== \Base::instance()) {
-            $this->key = $f3->get('ALIAS');
-        }
-    }
+    var $data;
 
-    function index() {
-        $lang = new Lang();
-        $routes = include('config/routing.php');
-        $this->routeData = $routes[$lang->current][$this->key];
-        $this->createRouteData();
-        $this->render();
-    }
-
-    function createRouteData() {
-        foreach($this->routeData as $key => $val) {
-            $this->$key = $val;
-        }
-    }
-
-    function render() {
-        $path = new Path();
-        $f3 = \Base::instance();
-        $config = new Config($f3->get('config'));
-        $layout = $config->siteLayout;
-        $realfilepath = 'view/pages/' . $this->key . '.html';
-        $layoutpath = $path->layout($layout);
-
-        if (file_exists($realfilepath)) {
-            $f3->set('page', $this);
-            echo \Template::instance()->render($layoutpath);
+    function __construct($data) {
+        $this->db = new Data('pages');
+        if (is_array($data)) {
+            $this->data = $data;
         } else {
-            self::error();
+            return false;
         }
     }
 
-    static function error() {
-        $path = new Path();
-        $errorPath = $path->error('view');
-        $errorFile = include($errorPath);
-        echo \Template::instance()->resolve($errorFile);
-    }
-
-    static function get($page) {
-        $f3 = \Base::instance();
-        $routes = include('config/routing.php');
-        $lang = new Lang();
-        $pageData = $routes[$lang->current][$page];
-        return $pageData;
+    function create() {
+        $this->db->mapper->insert();
+        foreach($this->data as $key => $val) {
+            $this->db->mapper[$key] = $val;
+        }
+        if ($this->db->mapper->save()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }
