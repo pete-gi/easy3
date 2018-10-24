@@ -26,6 +26,7 @@ class Gallery {
                         $this->listFiles($dir);
                         $this->mapper->insert();
                         $this->mapper['name'] = $dir;
+                        $this->mapper->save();
                     }
                 }
             }
