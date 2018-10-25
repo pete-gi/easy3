@@ -1,7 +1,7 @@
 .dropdown-menu {
     background-color: $white;
     .dropdown-item {
-        @import './nav/nav-item';
+        @import './nav-item';
         &.active,
         &:hover,
         &:focus {

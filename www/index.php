@@ -5,7 +5,6 @@ $f3->config('config/config.ini');
 $routesData = include('config/routing.php');
 $config = $f3->get('config');
 $lang = new Lang();
-// $f3->route('GET /register/@username/@password', 'User->register');
 
 foreach($routesData[$lang->current] as $key => $route) {
     $method = 'GET';

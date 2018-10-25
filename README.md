@@ -9,11 +9,6 @@
 * Włączenie i wyłączenie obsługi języków odbywa się w pliku _config/config.ini_
 * W katalogu _view/translations_ znajdują się tłumaczenia treści nieedytowalnych (wyślij, projekt i realizacja, copyright, etc)
 
-## Przestrzenie
-* Istnieją przestrzenie lokalne i globalne. Jedne i drugie obsługują języki, tzn. zapisują i wczytują inne treści w zależności od wybranej wersji językowej
-* Sekcja lokalna - {{@area->set('NAZWA')}}
-* Sekcja globalna - {{@area->set('NAZWA', true)}}
-
 ## Galerie
 * Każdy element galerii musi mieć atrybut [data-fancybox="nazwa"] lub klasę _lightbox_ aby otwierał się ładnie w lightboxie.
 * Inicjalizacja galerii - _{{@gallery->create('NAZWA')}}_
@@ -24,12 +19,6 @@
 * Dane dotyczące formularzy znajdują się w katalogu _view/forms_
 * Każdy formularz to osobny plik konfiguracyjny. Katalog języka jest pobierany automatycznie
 * Do formularza można się odnieść poprzez kod {{@form->create('NAZWA-PLIKU-FORMULARZA')}}
-
-## Mapa Google
-* Wstawianie mapy odbywa się za pomocą `<gmap id="ID"></gmap>`
-* Punkty na mapie wstawia się za pomocą `<gmarker></gmarker>`
-* Mapa posiada atrybuty: _id, center, zoom_
-* Punkty posiadają atrybuty: _coords, title, color_ oraz można do nich wrzucić kod html, który pojawi się jako infoWindow (po kliknięciu na ten marker)
 
 ## Edycja treści
 * Ścieżka do edycji - _/asdf_
@@ -48,11 +37,10 @@
 * Tag przyjmuje jeden parametr _title_ odpowiadający za klikalny tytuł
 * Wewnątrz tagu należy wprowadzić treść
 
-### Masonry
-* Za pomocą tagu `<masonry></masonry>` można dodać kontener Masonry. Kafelki dodaje się poprzez `<grid-item></grid-item>`.
-* Kafelek przyjmuje parametry _width_ i _height_ odpowiadające za ich rozmiar. *UWAGA! Rozmiar podaje się jako mnożnik, nie konkretna długość!*
-* Kafelek przyjmuje parametr _classname_ odpowiadające za dodatkowe klasy html dla niego.
-* Wewnątrz kafelka należy wprowadzić treść
+### LazyLoad Img
+* Za pomocą tagu `<img-lazy />` można dodać dynamicznie ładowany obrazek.
+* Tag przyjmuje wszystkie możliwe parametry zwykłego _img_
+* Wymagany jest atrybut _src_
 
 ### Popup
 * Mamy gotowy kod PopUpa do wykorzystania. Wystarczy go zaimportować kodem `<include href="{{@path->partial('popup')}}" />`
@@ -86,19 +74,14 @@
 * {{@path->partial('plik')}} - ścieżka do kawałka kodu html (katalog view/partials); *UWAGA! Bez rozszerzenia .html!*
 
 #### Skrót dostępnych kodów i komponentów (jeśli konkretny komponent jest włączony)
-* {{@area->set('NAZWA')}} - sekcja lokalna
-* {{@area->set('NAZWA', true)}} - sekcja globalna
 * {{@gallery->create('NAZWA')}} - galeria
 * {{@form->create('NAZWA-PLIKU-FORMULARZA')}} - formularz
 * `<tel></tel>` - klikalny numer telefonu
 * `<email></email>` - klikalny adres e-mail
 * `<www></www>` - klikalny adres www (atrybut ssl z wartością true/false aby mieć https://)
-* `<gmap id="" center="" zoom=""></gmap>` - kontener mapy Google
-* `<gmarker coords="" title="" color=""></gmarker>` - punkt na mapie Google
+* `<image src="" alt="" />` - dynamiczne ładowany obrazek gdy scroll dotrze do niego
 * `<parallax img="" height=""></parallax>` - parallax
 * `<accordion></accordion>` - kontener bootstrapowego rozwijanego pola (należy odkomentować w vue.js/index.js)
-* `<masonry></masonry>` - kontener siatki Masonry (należy odkomentować w vue.js/index.js/index.scss)
-* `<grid-item width="2" height="2"></grid-item>` - kafelek siatki Masonry (należy odkomentować w vue.js/index.js/index.scss)
 * `<include href="{{@path->partial('popup')}}" />` - kod popupa (można odkomentować w index.scss)
 
 ## Praca developera i Build produkcyjny - informacje

@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="author" content="Piotr G. / Internet-Media.pl">
+    <meta name="author" content="Piotr Golczyk / pete-gi.github.io">
     <meta name="keywords" content="{{@page->seo['keywords']}}">
     <meta name="description" content="{{@page->seo['description']}}">
     <meta id="GoogleMapsApiKey" name="GoogleMapsApiKey" content="{{@config->GoogleMapsApiKey}}">
@@ -20,24 +20,21 @@
         <link rel="stylesheet" type="text/css" href="{{@path->css('content-tools.min.css')}}">
     </check>
     <link rel="icon" href="{{@path->img('favicon.ico')}}">
+    <!-- FONT -->
 
     <check if="{{@config->preloader}}">
         <script defer src="{{@path->js('preloader.js')}}"></script>
     </check>
     <script defer src="{{@path->js('index.js')}}"></script>
-    <check if="{{@user->getAuth()}}">
-        <script defer src="{{@path->js('content-tools.min.js')}}"></script>
-        <script defer src="https://code.jquery.com/jquery-1.12.4.js"></script>
-        <script defer src="{{@path->js('jquery-ui.min.js')}}"></script>
-        <script defer src="{{@path->js('editor.js')}}"></script>
-    </check>
+    {{@componentsStyles}}
+    {{@componentsScripts}}
     <check if="{{@config->recaptcha}}">
         <script defer src='https://www.google.com/recaptcha/api.js'></script>
     </check>
 </head>
 
 <body>
-    <div id="page" class="page page-default" data-page="{{@page->key}}" data-editmode="{{@user->getAuth() ? 'true' : 'false'}}" @click="rodo.info = false">
+    <div id="page" class="page page-default" data-page="{{@page->key}}" @click="rodo.info = false">
 
         <check if="{{@config->preloader}}">
             <div id="page-preloader" class="is-active">
@@ -52,9 +49,7 @@
         <include href="{{@path->partial('page-nav/bootstrap4')}}" />
         <include href="{{@path->partial('page-slider/flexslider')}}" />
 
-        <main id="page-main" class="page--main section">
-            <include href="{{@path->page(@page->key)}}" />
-        </main>
+        <include href="{{@path->page(@page->key)}}" />
 
         <button class="scroll-top js-scroll-top">
             <i class="fa fa-angle-up"></i>

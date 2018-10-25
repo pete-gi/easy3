@@ -1,4 +1,21 @@
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/_functions";
+@import "~bootstrap/scss/_variables";
+@import "~bootstrap/scss/_mixins";
+@import "~bootstrap/scss/_reboot";
+@import "~bootstrap/scss/_type";
+@import "~bootstrap/scss/_images";
+@import "~bootstrap/scss/_code";
+@import "~bootstrap/scss/_grid";
+@import "~bootstrap/scss/_tables";
+@import "~bootstrap/scss/_forms";
+@import "~bootstrap/scss/_transitions";
+@import "~bootstrap/scss/_dropdown";
+@import "~bootstrap/scss/_nav";
+@import "~bootstrap/scss/_navbar";
+@import "~bootstrap/scss/_media";
+@import "~bootstrap/scss/_utilities";
+
+@import '~font-awesome/css/font-awesome.min.css';
 
 @import 'styles/__variables';
 @import 'styles/__mixins';
@@ -9,26 +26,14 @@
 // FANCYBOX GALLERY
 @import 'styles/_gallery';
 
-// CUSTOM SCROLLBAR
-// @import 'styles/_custom-scrollbar';
-
-// CONTENT EDITOR
-// @import 'styles/_contenttools';
-
 // SOCIAL ICONS
 @import 'styles/_social-icons';
 
 // SCROLL-TO-TOP BUTTON
 @import 'styles/_scroll-top';
 
-// AOS
-// @import '~aos/dist/aos.css';
-
 // POPUP
 // @import 'styles/_popup';
 
 // SLICK CAROUSEL
 // @import 'styles/_carousel';
-
-// MASONRY
-// @import 'styles/_masonry';

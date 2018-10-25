@@ -9,20 +9,12 @@ $max-md: '(max-width: 767px)';
 $max-lg: '(max-width: 991px)';
 $max-xl: '(max-width: 1199px)';
 
-$from-mobile: '(min-width: 576px)';
-$from-tablet: '(min-width: 768px)';
-$from-desktop: '(min-width: 992px)';
-$from-wide: '(min-width: 1200px)';
-
-$to-mobile: '(max-width: 575px)';
-$to-tablet: '(max-width: 767px)';
-$to-desktop: '(max-width: 991px)';
-$to-wide: '(max-width: 1199px)';
-
 // COLORS
 $white: #fff;
 $black: #000;
 $color-text: #222;
+$color-white: #fff;
+$color-black: #000;
 
 $color-primary: #222;
 $color-primary-light: lighten($color-primary, 15%);
@@ -37,5 +29,7 @@ $color-triary-light: lighten($color-triary, 15%);
 $color-triary-dark: darken($color-triary, 15%);
 
 // FONTS
-$font-primary: sans-serif;
-$font-secondary: sans-serif;
+$font-primary: '', sans-serif;
+$font-secondary: '', sans-serif;
+$regular: 400;
+$bold: 700;

@@ -20,58 +20,12 @@
 
 @mixin gradient($from, $to, $deg) {
     background: rgba($from, 1);
-    background: linear-gradient($deg, rgba($from,1) 0%,rgba($to,1) 100%);
+    background: linear-gradient($deg, rgba($from, 1) 0%, rgba($to, 1) 100%);
 }
 
 // Mixin pozwalajacy ustawienie 'color' i 'background' zaznaczonego tekstu
 @mixin selection {
     &::selection {
         @content;
-    }
-}
-
-// Mixiny na breakpointy
-@mixin min($size) {
-    @if $size == 'sm' {
-        @media #{$min-sm} {
-            @content;
-        }
-    }
-    @if $size == 'md' {
-        @media #{$min-md} {
-            @content;
-        }
-    }
-    @if $size == 'lg' {
-        @media #{$min-lg} {
-            @content;
-        }
-    }
-    @if $size == 'xl' {
-        @media #{$min-xl} {
-            @content;
-        }
-    }
-}
-@mixin max($size) {
-    @if $size == 'sm' {
-        @media #{$max-sm} {
-            @content;
-        }
-    }
-    @if $size == 'md' {
-        @media #{$max-md} {
-            @content;
-        }
-    }
-    @if $size == 'lg' {
-        @media #{$max-lg} {
-            @content;
-        }
-    }
-    @if $size == 'xl' {
-        @media #{$max-xl} {
-            @content;
-        }
     }
 }

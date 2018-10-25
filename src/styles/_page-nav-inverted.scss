@@ -1,0 +1,27 @@
+.page--nav.nav-to-invert {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    transition-duration: 0.3s;
+    @media #{$min-md} {
+        background-color: transparent;
+    }
+    &.nav-inverted {
+        box-shadow: 0 5px 15px 0 rgba($black, 0.4);
+        background-color: transparent;
+    }
+    @import './nav/inverted/nav-header';
+    .navbar-collapse {
+        
+    }
+    .navbar-nav {
+        
+    }
+    li.nav-item {
+        @import './nav/inverted/nav-item';
+        &.dropdown {
+            @import './nav/inverted/nav-dropdown';
+        }
+    }
+}

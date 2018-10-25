@@ -1,16 +1,13 @@
 import Vue from 'vue';
 import VueResource from 'vue-resource';
 import cookies from './components/cookies.vue';
-import gmap from './components/gmap.vue';
-import gmarker from './components/gmarker.vue';
 import parallax from './components/parallax.vue';
 import tel from './components/tel.vue';
 import email from './components/email.vue';
 import www from './components/www.vue';
 import gallery from './components/gallery-loader.vue';
+import imgLazy from './components/img-lazy.vue';
 // import accordion from './components/accordion.vue';
-// import masonry from './components/masonry.vue';
-// import gridItem from './components/masonry-grid.vue';
 
 Vue.use(VueResource)
 let vue = new Vue({
@@ -59,16 +56,13 @@ let vue = new Vue({
     },
     components: {
         cookies,
-        gmap,
-        gmarker,
         parallax,
         tel,
         email,
         www,
         gallery,
+        imgLazy,
         // accordion,
-        // masonry,
-        // gridItem
     }
 })
 

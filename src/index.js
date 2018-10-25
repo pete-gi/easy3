@@ -2,11 +2,9 @@ import 'bootstrap';
 
 import './index.scss';
 
-// import CustomScrollbar from './scripts/customScrollbar';
 import Flexslider from './scripts/flexslider';
 import Fancybox from './scripts/fancybox';
 // import Slick from './scripts/slick';
-// import MasonryGrid from './scripts/masonry';
 // import AOSAnimate from './scripts/aos';
 
 import ScrollTo from './scripts/scrollTo';
@@ -17,11 +15,6 @@ import ScrollTop from './scripts/scrollToTop';
 import vue from './vue';
 
 $(window).on('load', function() {
-    // let scrollbar = new CustomScrollbar('#page');
-    // scrollbar.step = 200;
-    // // scrollbar.axis = 'y';
-    // scrollbar.init();
-
     let slider = new Flexslider('.flexslider');
     slider.controls = false;
     slider.directions = false;
@@ -63,10 +56,6 @@ $(window).on('load', function() {
     // // accordion.resetOnToggle = true;
     // // accordion.resetOnBodyClick = true;
     // accordion.init();
-
-    // let masonry = new MasonryGrid('.masonry');
-    // // masonry.itemSelector = '.masonry';
-    // masonry.init();
 
     // let aos = new AOSAnimate();
     // aos.offset = 200;
