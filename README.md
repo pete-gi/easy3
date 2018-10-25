@@ -9,11 +9,6 @@
 * Włączenie i wyłączenie obsługi języków odbywa się w pliku _config/config.ini_
 * W katalogu _view/translations_ znajdują się tłumaczenia treści nieedytowalnych (wyślij, projekt i realizacja, copyright, etc)
 
-## Przestrzenie
-* Istnieją przestrzenie lokalne i globalne. Jedne i drugie obsługują języki, tzn. zapisują i wczytują inne treści w zależności od wybranej wersji językowej
-* Sekcja lokalna - {{@area->set('NAZWA')}}
-* Sekcja globalna - {{@area->set('NAZWA', true)}}
-
 ## Galerie
 * Każdy element galerii musi mieć atrybut [data-fancybox="nazwa"] lub klasę _lightbox_ aby otwierał się ładnie w lightboxie.
 * Inicjalizacja galerii - _{{@gallery->create('NAZWA')}}_
@@ -43,7 +38,7 @@
 * Wewnątrz tagu należy wprowadzić treść
 
 ### LazyLoad Img
-* Za pomocą tagu `<image />` można dodać dynamicznie ładowany obrazek.
+* Za pomocą tagu `<img-lazy />` można dodać dynamicznie ładowany obrazek.
 * Tag przyjmuje wszystkie możliwe parametry zwykłego _img_
 * Wymagany jest atrybut _src_
 
@@ -79,8 +74,6 @@
 * {{@path->partial('plik')}} - ścieżka do kawałka kodu html (katalog view/partials); *UWAGA! Bez rozszerzenia .html!*
 
 #### Skrót dostępnych kodów i komponentów (jeśli konkretny komponent jest włączony)
-* {{@area->set('NAZWA')}} - sekcja lokalna
-* {{@area->set('NAZWA', true)}} - sekcja globalna
 * {{@gallery->create('NAZWA')}} - galeria
 * {{@form->create('NAZWA-PLIKU-FORMULARZA')}} - formularz
 * `<tel></tel>` - klikalny numer telefonu
