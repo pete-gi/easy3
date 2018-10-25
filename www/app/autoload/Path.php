@@ -41,10 +41,6 @@ class Path {
         return '#' . $pre . '-' . Page::get($page)['url'];
     }
 
-    function components() {
-        return \Base::instance()->get('BASE')  . '/' . 'view/'  . "components";
-    }
-
     function img($file) {
         return \Base::instance()->get('BASE')  . '/' . 'view/'  . "assets/img/$file";
     }
