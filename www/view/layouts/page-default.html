@@ -26,12 +26,8 @@
         <script defer src="{{@path->js('preloader.js')}}"></script>
     </check>
     <script defer src="{{@path->js('index.js')}}"></script>
-    <check if="{{@user->getAuth()}}">
-        <script defer src="{{@path->js('content-tools.min.js')}}"></script>
-        <script defer src="https://code.jquery.com/jquery-1.12.4.js"></script>
-        <script defer src="{{@path->js('jquery-ui.min.js')}}"></script>
-        <script defer src="{{@path->js('editor.js')}}"></script>
-    </check>
+    {{@componentsStyles}}
+    {{@componentsScripts}}
     <check if="{{@config->recaptcha}}">
         <script defer src='https://www.google.com/recaptcha/api.js'></script>
     </check>

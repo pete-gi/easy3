@@ -1,4 +1,5 @@
 import 'slick-carousel/slick/slick.min';
+import 'slick-carousel/slick/slick.css';
 class Slick {
     constructor(selector) {
         this.selector = selector;
