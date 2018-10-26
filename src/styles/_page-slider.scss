@@ -3,12 +3,17 @@ $slider-subpage-height: 50rem;
 $slider-md-height: 100vh;
 
 @import './slider/flexslider';
+// @import './slider/nivoslider';
 @import './slider/slider-caption';
 
 .page--slider {
     z-index: 10;
+    height: $slider-subpage-height;
+    @media #{$min-md} {
+        height: $slider-md-height;
+    }
     @at-root #page:not([data-page="index"]) & {
-        max-height: $slider-subpage-height;
+        height: $slider-subpage-height;
         overflow: hidden;
         display: flex;
         align-items: center;
