@@ -3,6 +3,7 @@ import 'bootstrap';
 import './index.scss';
 
 import Flexslider from './scripts/flexslider';
+// import Nivoslider from './scripts/nivoslider';
 import Fancybox from './scripts/fancybox';
 // import Slick from './scripts/slick';
 // import AOSAnimate from './scripts/aos';
@@ -20,6 +21,12 @@ $(window).on('load', function() {
     slider.directions = false;
     // slider.speed = 4000;
     slider.init();
+
+    // let slider = new Nivoslider('.nivoSlider');
+    // slider.controls = true;
+    // slider.directions = false;
+    // // slider.speed = 4000;
+    // slider.init();
 
     let gallery = new Fancybox('[data-fancybox]');
     // gallery.thumbnails = true;

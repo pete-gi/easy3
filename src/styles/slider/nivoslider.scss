@@ -1,0 +1,106 @@
+.nivoSlider {
+    object-fit: cover;
+    object-position: center center;
+    width: 100%;
+    height: 100% !important;
+
+    img {
+        object-fit: cover;
+        object-position: center center;
+        width: 100%;
+        height: 100% !important;
+    }
+}
+
+.nivo-caption {
+    display: none;
+}
+
+.nivo-controlNav {
+    position: absolute;
+    left: 50%;
+    bottom: 2rem;
+    transform: translateX(-50%);
+    z-index: 5;
+    font-size: 0;
+    color: transparent;
+    display: flex;
+    justify-content: center;
+
+    .nivo-control {
+        margin: 0 0.7rem;
+        width: 1.2rem;
+        height: 1.2rem;
+        border: 0;
+        border-radius: 50%;
+        background-color: $color-secondary;
+
+        &.active {
+            background-color: $color-primary;
+        }
+    }
+}
+
+.nivo-directionNav {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 0px;
+    z-index: 10;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .nivo-prevNav,
+    .nivo-nextNav {
+        position: absolute;
+        top: 50%;
+        width: 4.8rem;
+        height: 4.8rem;
+        background-color: transparent;
+        opacity: 1;
+
+        &:before {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            color: $white;
+            background-color: $color-primary;
+            font-family: FontAwesome;
+            font-size: 2.4rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &:hover,
+        &:focus {
+            opacity: 1;
+
+            &:before {
+                background-color: $color-primary-light;
+            }
+        }
+    }
+
+    .nivo-prevNav {
+        margin-right: auto;
+        left: 10px;
+
+        &:before {
+            content: '\f104';
+        }
+    }
+
+    .nivo-nextNav {
+        margin-left: auto;
+        right: 10px;
+
+        &:before {
+            content: '\f105';
+        }
+    }
+}
