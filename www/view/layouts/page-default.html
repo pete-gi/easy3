@@ -26,8 +26,6 @@
         <script defer src="{{@path->js('preloader.js')}}"></script>
     </check>
     <script defer src="{{@path->js('index.js')}}"></script>
-    {{@componentsStyles}}
-    {{@componentsScripts}}
     <check if="{{@config->recaptcha}}">
         <script defer src='https://www.google.com/recaptcha/api.js'></script>
     </check>
