@@ -1,13 +1,13 @@
 const path = require('path');
 const webpack = require('webpack');
-const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 const src = 'src';
 const dist = 'www/view/assets';
 
 const config = {
-    mode: 'development',
+    devtool: 'source-map',
     entry: {
         index: `./${src}/index.js`,
         libs: `./${src}/libs.js`
@@ -19,8 +19,9 @@ const config = {
     module: {
         rules: [{
             test: /\.(scss|sass|css)$/,
-            use: ExtractTextWebpackPlugin.extract({
-                use: [{
+            use: [
+                MiniCssExtractPlugin.loader,
+                {
                     loader: 'css-loader',
                     options: {
                         importLoaders: 1,
@@ -33,8 +34,8 @@ const config = {
                         processCssUrls: false,
                         includePaths: [path.resolve(__dirname, src), path.resolve(__dirname, `${src}/styles`)]
                     }
-                }]
-            })
+                }
+            ]
         }, {
             test: /\.js$/,
             exclude: /node_modules/,
@@ -87,7 +88,9 @@ const config = {
             '$': 'jquery',
             'window.$': 'jquery',
         }),
-        new ExtractTextWebpackPlugin('css/[name].css'),
+        new MiniCssExtractPlugin({
+            filename: 'css/[name].css'
+        }),
         new VueLoaderPlugin()
     ]
 };
